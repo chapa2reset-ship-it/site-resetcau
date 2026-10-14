@@ -774,7 +774,7 @@
 </script>
 <script>
 // contagem regressiva pro dia da votacao (5/11/2026)
-(function(){var el=document.getElementById('pv-timer');if(!el)return;function atualiza(){var hoje=new Date();hoje.setHours(0,0,0,0);var dia=new Date(2026,10,5);var d=Math.round((dia-hoje)/86400000);if(d>1)el.innerHTML='Faltam <b>'+d+'</b> dias';else if(d===1)el.innerHTML='Falta <b>1</b> dia';else if(d===0)el.innerHTML='<b>É hoje!</b> Vote até as 23h59';else el.innerHTML='Votação encerrada';}atualiza();setInterval(atualiza,60*60*1000);})();
+(function(){var el=document.getElementById('pv-timer');if(!el)return;function atualiza(){var hoje=new Date();hoje.setHours(0,0,0,0);var dia=new Date(2026,10,5);var d=Math.round((dia-hoje)/86400000);if(d>1)el.innerHTML='Faltam <b>'+d+'</b> dias';else if(d===1)el.innerHTML='Falta <b>1</b> dia';else if(d===0)el.innerHTML='<b>É hoje!</b> Vote pelo SiEN';else el.innerHTML='Votação encerrada';}atualiza();setInterval(atualiza,60*60*1000);})();
 </script>
 </body>
 </html>

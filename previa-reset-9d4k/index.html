@@ -50,6 +50,20 @@
 .chamada-reset .bts .vazado:hover{background:#fff;color:var(--roxo)}
 @media (max-width:960px){.corpo-eixos{grid-template-columns:320px 1fr;gap:36px}.passo h3{font-size:20px}.passo p{font-size:14.5px}}
 @media (max-width:820px){.faixa-eixos h2{font-size:32px}.faixa-eixos::before{font-size:260px;top:-40px}.corpo-eixos{grid-template-columns:1fr}.video-eixos{max-width:300px;margin:0 auto;aspect-ratio:9/16}.caminho{margin-top:8px}.caminho::before{left:32px}.passo{grid-template-columns:54px 1fr;gap:16px}.passo .n{width:54px;height:54px;font-size:26px}.chamada-reset{grid-template-columns:1fr;padding:30px 24px;margin-top:32px}.chamada-reset h3{font-size:28px}.chamada-reset::after{display:none}}
+
+.votar-fatos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0 26px}
+.votar-fatos div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px;min-width:0}
+.votar-fatos small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amarelo);font-weight:800;margin-bottom:6px}
+.votar-fatos b{display:block;font-size:17px;line-height:1.2;color:#fff;overflow-wrap:anywhere}
+.votar-fatos b a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.votar-fatos span{display:block;font-size:12.5px;color:#cfc6e0;margin-top:4px}
+.votar-passos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.votar-passos li{background:#fff;color:var(--txt);border-radius:14px;padding:18px 18px 16px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.votar-passos .n{width:34px;height:34px;border-radius:50%;background:var(--amarelo);color:#1d0f33;display:grid;place-items:center;font-weight:800}
+.votar-passos h3{font-size:16px;margin:0 0 6px;color:var(--roxo)}
+.votar-passos p{margin:0;font-size:14px;line-height:1.5;color:#3b3350}
+@media (max-width:960px){.votar-fatos,.votar-passos{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.votar-fatos,.votar-passos{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -223,12 +237,20 @@
   <div class="wrap">
     <span class="kicker">Como votar</span>
     <h2>Dia 5 de novembro, quinta-feira. Leva dois minutos.</h2>
-    <div class="grid g4 passos" style="margin-top:22px">
-      <div class="card"><h3>Confira seu registro</h3><p>Só vota quem tem registro ativo no CAU/SP até 21/10. Regularize no SICCAU antes.</p></div>
-      <div class="card"><h3>Acesse o sistema eleitoral</h3><p>No dia 5/11, entre no SiEN com seu login gov.br ou CPF e senha do SICCAU.</p></div>
-      <div class="card"><h3>Escolha a Chapa 2</h3><p>O voto é por chapa. Procure R.E.S.E.T., número 2, e confirme.</p></div>
-      <div class="card"><h3>Guarde o comprovante</h3><p>O voto é obrigatório para registro ativo. Quem não vota precisa justificar.</p></div>
+    <p class="lead" style="color:#e9e2f5;max-width:720px">A votação é 100% online, pelo Sistema Eleitoral Nacional do CAU (SiEN). Não tem urna nem local de votação: é pelo celular ou computador, de onde você estiver.</p>
+    <div class="votar-fatos">
+      <div><small>Onde</small><b><a href="https://eleitoral.caubr.gov.br" target="_blank" rel="noopener">eleitoral.caubr.gov.br</a></b><span>o SiEN, sistema eleitoral do CAU</span></div>
+      <div><small>Quando</small><b>5 de novembro</b><span>quinta-feira, durante todo o dia</span></div>
+      <div><small>Quem</small><b>Registro ativo no CAU/SP</b><span>a lista de quem vota fecha em 21/10</span></div>
+      <div><small>Como</small><b>Login gov.br ou CPF e senha do SICCAU</b><span>os mesmos acessos que você já usa</span></div>
     </div>
+    <ol class="votar-passos">
+      <li><span class="n">1</span><div><h3>Confira o seu registro</h3><p>Só vota quem está com o registro ativo no CAU/SP. A lista de eleitores é fechada em 21 de outubro: se tiver pendência, regularize no SICCAU antes dessa data.</p></div></li>
+      <li><span class="n">2</span><div><h3>No dia 5, entre no SiEN</h3><p>Acesse eleitoral.caubr.gov.br e entre com o login gov.br ou com o CPF e a senha do SICCAU.</p></div></li>
+      <li><span class="n">3</span><div><h3>Escolha a Chapa 2 R.E.S.E.T.</h3><p>O voto é por chapa, não por candidato. Procure o número 2, R.E.S.E.T., e confirme.</p></div></li>
+      <li><span class="n">4</span><div><h3>Guarde o comprovante</h3><p>O voto é obrigatório para quem tem registro ativo. Quem não votar precisa justificar depois.</p></div></li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn amarelo" href="https://eleitoral.caubr.gov.br" target="_blank" rel="noopener">Abrir o site da votação</a> &nbsp; <a class="btn vazado" href="cadastro.html">Quero apoiar a Chapa 2</a></p>
   </div>
 </section>
 

@@ -357,7 +357,7 @@
   var painel=document.getElementById('painel-prop'),cad=document.getElementById('todas');
   if(painel&&cad){var ag=false;function checa(){ag=false;painel.classList.toggle('com-filtros',cad.getBoundingClientRect().top<=110);}window.addEventListener('scroll',function(){if(!ag){ag=true;requestAnimationFrame(checa);}},{passive:true});window.addEventListener('resize',checa);checa();}
   // contagem regressiva pro dia da votação (5/11/2026)
-  (function(){var el=document.getElementById('pv-timer');if(!el)return;function atualiza(){var hoje=new Date();hoje.setHours(0,0,0,0);var dia=new Date(2026,10,5);var d=Math.round((dia-hoje)/86400000);if(d>1)el.innerHTML='Faltam <b>'+d+'</b> dias';else if(d===1)el.innerHTML='Falta <b>1</b> dia';else if(d===0)el.innerHTML='<b>É hoje!</b> Vote até as 23h59';else el.innerHTML='Votação encerrada';}atualiza();setInterval(atualiza,60*60*1000);})();
+  (function(){var el=document.getElementById('pv-timer');if(!el)return;function atualiza(){var hoje=new Date();hoje.setHours(0,0,0,0);var dia=new Date(2026,10,5);var d=Math.round((dia-hoje)/86400000);if(d>1)el.innerHTML='Faltam <b>'+d+'</b> dias';else if(d===1)el.innerHTML='Falta <b>1</b> dia';else if(d===0)el.innerHTML='<b>É hoje!</b> Vote pelo SiEN';else el.innerHTML='Votação encerrada';}atualiza();setInterval(atualiza,60*60*1000);})();
   // abre o bloco certo quando chega por âncora (#p32)
   function abre(){var h=location.hash;if(!h||h.length<2)return;var el;try{el=document.querySelector(h)}catch(e){return}if(el){var d=el.closest('details');if(d){d.open=true;d.classList.remove('fora');}el.scrollIntoView({block:'center'});}}
   window.addEventListener('hashchange',abre);abre();

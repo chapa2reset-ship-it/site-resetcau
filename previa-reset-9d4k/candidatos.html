@@ -2034,7 +2034,7 @@
 <script>
 (function(){
   /* contagem regressiva pro dia da votação (5/11/2026), em dias inteiros, atualiza sozinha */
-  (function(){var el=document.getElementById('pv-timer');if(!el)return;function atualiza(){var hoje=new Date();hoje.setHours(0,0,0,0);var dia=new Date(2026,10,5);var d=Math.round((dia-hoje)/86400000);if(d>1)el.innerHTML='Faltam <b>'+d+'</b> dias';else if(d===1)el.innerHTML='Falta <b>1</b> dia';else if(d===0)el.innerHTML='<b>É hoje!</b> Vote até as 23h59';else el.innerHTML='Votação encerrada';}atualiza();setInterval(atualiza,60*60*1000);})();
+  (function(){var el=document.getElementById('pv-timer');if(!el)return;function atualiza(){var hoje=new Date();hoje.setHours(0,0,0,0);var dia=new Date(2026,10,5);var d=Math.round((dia-hoje)/86400000);if(d>1)el.innerHTML='Faltam <b>'+d+'</b> dias';else if(d===1)el.innerHTML='Falta <b>1</b> dia';else if(d===0)el.innerHTML='<b>É hoje!</b> Vote pelo SiEN';else el.innerHTML='Votação encerrada';}atualiza();setInterval(atualiza,60*60*1000);})();
   /* só um currículo aberto por vez; ao abrir, rola até o card se o topo dele saiu da tela */
   var curs=document.querySelectorAll('.pes details');
   curs.forEach(function(d){d.addEventListener('toggle',function(){if(!d.open)return;curs.forEach(function(o){if(o!==d&&o.open)o.open=false;});var card=d.closest('.dupla-card')||d.closest('.pes');if(!card)return;var cab=document.querySelector('.topo');var h=(cab?cab.offsetHeight:72)+12;if(card.getBoundingClientRect().top<h){card.scrollIntoView({behavior:'smooth',block:'start'});}});});
