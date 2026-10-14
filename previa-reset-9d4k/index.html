@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="icon" href="img/cau-reset-badge.webp" type="image/webp">
+<link rel="apple-touch-icon" href="favicon.png">
+<title>Chapa 2 R.E.S.E.T. | Eleições CAU/SP 2026</title>
+<meta name="description" content="Chapa 2 R.E.S.E.T.: 118 propostas para fazer o CAU/SP voltar a trabalhar para os arquitetos e urbanistas. Vote dia 5 de novembro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<style>
+.faixa-eixos{background:var(--amarelo);color:var(--roxo);padding:64px 0 72px;position:relative;overflow:hidden}
+.faixa-eixos::before{content:"4";position:absolute;right:-30px;top:-70px;font-size:460px;font-weight:800;line-height:1;color:rgba(42,22,70,.07);pointer-events:none}
+.faixa-eixos .wrap{position:relative}
+.faixa-eixos .cab{text-align:center;max-width:720px;margin:0 auto 36px}
+.faixa-eixos .kicker{color:var(--roxo);opacity:.7}
+.faixa-eixos h2{font-size:42px;line-height:1.05;margin:6px 0 12px;color:var(--roxo)}
+.faixa-eixos .lead{color:var(--roxo);font-size:17px;line-height:1.5;margin:0}
+.corpo-eixos{display:grid;grid-template-columns:380px 1fr;gap:56px;align-items:center}
+.video-eixos{aspect-ratio:3/4;border-radius:18px;background:linear-gradient(160deg,#3a2060,#2a1646 60%,#1c1430);border:3px solid var(--roxo);position:relative;display:flex;justify-content:center;align-items:center;box-shadow:0 18px 40px rgba(42,22,70,.25);cursor:pointer;overflow:hidden}
+.video-eixos video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#1c1430}
+.video-eixos.tocando .play,.video-eixos.tocando .legenda{opacity:0;pointer-events:none}
+.video-eixos .play,.video-eixos .legenda{transition:opacity .3s}
+.video-eixos .play{border:0;cursor:pointer;z-index:2;width:84px;height:84px;border-radius:50%;background:var(--amarelo);position:relative;box-shadow:0 0 0 12px rgba(245,196,0,.25)}
+.video-eixos .play::after{content:"";position:absolute;left:33px;top:24px;border-left:28px solid var(--roxo);border-top:18px solid transparent;border-bottom:18px solid transparent}
+.video-eixos .legenda{z-index:2;position:absolute;left:0;right:0;bottom:0;padding:18px 20px 20px;background:linear-gradient(transparent,rgba(28,20,48,.92));color:#fff}
+.video-eixos .legenda b{display:block;font-size:17px;margin-bottom:4px}
+.video-eixos .legenda span{display:block;font-size:12.5px;color:#d9d0ea;line-height:1.4}
+.caminho{list-style:none;margin:0;padding:0 0 0 8px;position:relative;align-self:center}
+.caminho::before{content:"";position:absolute;left:40px;top:28px;bottom:28px;border-left:3px dashed rgba(42,22,70,.35)}
+.passo{display:grid;grid-template-columns:66px 1fr;gap:24px;align-items:center;padding:0 0 26px;position:relative}
+.passo:last-child{padding-bottom:0}
+.passo .n{width:66px;height:66px;border-radius:50%;background:var(--roxo);color:var(--amarelo);display:grid;place-items:center;font-size:32px;font-weight:800;box-shadow:0 0 0 8px var(--amarelo);position:relative;z-index:1}
+.passo h3{font-size:22px;line-height:1.15;margin:0 0 5px;color:var(--roxo)}
+.passo p{color:var(--roxo);font-size:15.5px;line-height:1.5;margin:0;max-width:640px}
+.faixa-eixos .wrap-chamada{display:block}
+.chamada-reset{margin-top:72px;background:var(--roxo);color:#fff;border-radius:22px;padding:40px 44px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;box-shadow:0 22px 50px rgba(42,22,70,.3);position:relative;overflow:hidden}
+.chamada-reset::after{content:"";position:absolute;right:-90px;bottom:-120px;width:280px;height:280px;border-radius:50%;background:var(--laranja);opacity:.9}
+.chamada-reset .tx{position:relative;z-index:1}
+.chamada-reset .kicker{color:var(--amarelo);opacity:1}
+.chamada-reset h3{font-size:34px;line-height:1.05;margin:6px 0 12px;color:#fff}
+.chamada-reset p{color:#e9e2f5;font-size:16.5px;line-height:1.55;margin:0;max-width:560px}
+.chamada-reset .bts{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
+.chamada-reset .bts .btn{text-align:center}
+.chamada-reset .bts .vazado{border-color:#fff;color:#fff}
+.chamada-reset .bts .vazado:hover{background:#fff;color:var(--roxo)}
+@media (max-width:960px){.corpo-eixos{grid-template-columns:320px 1fr;gap:36px}.passo h3{font-size:20px}.passo p{font-size:14.5px}}
+@media (max-width:820px){.faixa-eixos h2{font-size:32px}.faixa-eixos::before{font-size:260px;top:-40px}.corpo-eixos{grid-template-columns:1fr}.video-eixos{max-width:300px;margin:0 auto;aspect-ratio:9/16}.caminho{margin-top:8px}.caminho::before{left:32px}.passo{grid-template-columns:54px 1fr;gap:16px}.passo .n{width:54px;height:54px;font-size:26px}.chamada-reset{grid-template-columns:1fr;padding:30px 24px;margin-top:32px}.chamada-reset h3{font-size:28px}.chamada-reset::after{display:none}}
+</style>
+</head>
+<body>
+<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div>
+<header class="topo"><div class="wrap">
+  <a class="marca" href="index.html"><img class="logo" src="img/cau-reset-badge.webp" alt="Chapa 2 R.E.S.E.T"><span>R.E.S.E.T.<small>Eleições CAU/SP 2026</small></span></a>
+  <nav>
+    <a href="index.html" class="ativo">Início</a>
+    <a href="propostas.html">Propostas</a>
+    <a href="candidatos.html">Candidatos</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="apoie.html">Compartilhe</a>
+    <a href="ideias.html">Envie sua ideia</a>
+    <a href="cadastro.html" class="cta">Quero apoiar</a>
+  </nav>
+</div></header>
+
+<section class="heroi">
+  <i class="bolha b1"></i><i class="bolha b2"></i><i class="bolha b3"></i><i class="bolha b4"></i>
+  <div class="wrap">
+    <div>
+      <span class="kicker">Reconstrução · Escuta · Suporte · Equidade · Transparência</span>
+      <h1>Vamos <span>resetar</span> o CAU/SP.</h1>
+      <p class="lead">Depois de seis anos da atual gestão, o Conselho fiscaliza pouco, orienta pouco e cobra muito. Somos a única oposição declarada: 190 arquitetos e urbanistas, de todas as regiões, com 118 propostas para fazer o CAU/SP voltar a trabalhar para quem sustenta o Conselho.</p>
+      <div class="acoes">
+        <a class="btn amarelo" href="propostas.html">Ver as propostas</a>
+        <a class="btn vazado" href="#como-votar">Como votar em 5/11</a>
+      </div>
+    </div>
+    <div class="lado-logo">
+      <img class="logo-grande" src="img/cau-reset-badge.webp" alt="Chapa 2 R.E.S.E.T">
+      <p class="legenda-logo">Muitas vozes. Uma vontade de mudar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="numeros-faixa">
+  <div class="wrap">
+    <div><b>118</b><span>propostas em 6 eixos e 7 perfis profissionais</span></div>
+    <div><b>190</b><span>candidatos, 102 mulheres, 82 do interior e litoral</span></div>
+    <div><b>10+</b><span>ex-gerentes regionais do CAU/SP. Quem conhece o Conselho por dentro.</span></div>
+    <div><b>5/11</b><span>votação online, obrigatória para registro ativo</span></div>
+  </div>
+</section>
+
+<section id="eixos" class="faixa-eixos">
+  <div class="wrap">
+    <div class="cab">
+      <span class="kicker">Para onde vai o CAU/SP</span>
+      <h2>Os 4 eixos da campanha</h2>
+      <p class="lead">Tudo o que a Chapa 2 propõe cabe em quatro direções. As 118 propostas são o detalhe. Os eixos são a prioridade.</p>
+    </div>
+    <div class="corpo-eixos">
+      <div class="video-eixos" id="video-eixos">
+        <video id="vid-eixos" src="video/eixos-eder.mp4" playsinline preload="metadata"></video>
+        <button class="play" type="button" aria-label="Assistir"></button>
+        <div class="legenda"><b>Os 4 eixos em 1 minuto</b><span>Eder Silva, coordenador da chapa. Vídeo de exemplo: a gravação definitiva entra aqui.</span></div>
+      </div>
+      <ol class="caminho">
+        <li class="passo">
+  <span class="n">1</span>
+  <div class="tx"><h3>Mercado de trabalho e tecnologia</h3><p>Ampliar o mercado de quem é registrado: Banco de Oportunidades, política própria para a Arquitetura de Interiores, reserva técnica com regra clara e capacitação em inteligência artificial para conquistar cliente.</p></div>
+</li>
+<li class="passo">
+  <span class="n">2</span>
+  <div class="tx"><h3>Fiscalização e valorização profissional</h3><p>Fiscalização efetiva contra o exercício ilegal da profissão e orientadora com quem está registrado. Cada irregular retirado do mercado é mais trabalho para quem paga anuidade.</p></div>
+</li>
+<li class="passo">
+  <span class="n">3</span>
+  <div class="tx"><h3>Suporte e atendimento</h3><p>Curso, capacitação, orientação técnica e em licitação, atendimento presencial nas regionais e o CAU/SP indo até o profissional do interior e do litoral.</p></div>
+</li>
+<li class="passo">
+  <span class="n">4</span>
+  <div class="tx"><h3>Transparência, legalidade e democracia</h3><p>Balancetes que qualquer arquiteto entende, decisões dentro da lei e gestão horizontal: um Conselho em que todos os grupos participam na proporção em que existem.</p></div>
+</li>
+      </ol>
+    </div>
+  </div>
+  <div class="wrap wrap-chamada">
+    <div class="chamada-reset">
+      <div class="tx">
+        <span class="kicker">Dia 5 de novembro</span>
+        <h3>É hora de dar um reset no CAU/SP.</h3>
+        <p>Vote Chapa 2. E não espere a eleição para fazer parte: envie a sua ideia, entre para a base de apoio e ajude a construir o Conselho que você quer ter.</p>
+      </div>
+      <div class="bts">
+        <a class="btn amarelo" href="#como-votar">Como votar em 5/11</a>
+        <a class="btn vazado" href="cadastro.html">Quero apoiar</a>
+        <a class="btn vazado" href="ideias.html">Envie sua ideia</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bandeiras">
+  <div class="wrap">
+    <span class="kicker">As 10 bandeiras</span>
+    <h2>O que muda no seu dia a dia</h2>
+    <p class="lead">Dez compromissos escolhidos a partir do que a categoria disse que mais pesa: trabalho, oportunidades, custo do Conselho e tecnologia.</p>
+    <div class="grid g5" style="margin-top:22px">
+      <div class="card cor"><span class="num">01</span><h3>Banco de Oportunidades do CAU/SP</h3><p>Trabalho, estágio, concursos e credenciamentos num só lugar, com área própria para autônomos e pequenos escritórios.</p></div>
+      <div class="card cor l"><span class="num">02</span><h3>IA para conquistar cliente</h3><p>Capacitação prática em inteligência artificial para se qualificar, achar cliente e vender projeto.</p></div>
+      <div class="card cor a"><span class="num">03</span><h3>Reserva técnica com regra clara</h3><p>Orientação sobre relações comerciais, remuneração, indicação de produtos e conflito de interesse.</p></div>
+      <div class="card cor v"><span class="num">04</span><h3>Custo do CAU na mesa</h3><p>Transparência total sobre o que é cobrado e proposta ao CAU/BR de revisão de anuidade, taxas e RRT, começando pelo recém-formado.</p></div>
+      <div class="card cor r"><span class="num">05</span><h3>Honorários justos</h3><p>Tabela indicativa, calculadora de custos e orientação sobre contratos, escopos e direitos autorais.</p></div>
+      <div class="card cor x"><span class="num">06</span><h3>Mais 5 regionais</h3><p>Descentralizar o CAU/SP com ações itinerantes no interior e litoral e atendimento onde o profissional está.</p></div>
+      <div class="card cor"><span class="num">07</span><h3>Fim da "canetagem"</h3><p>Fiscalização inteligente, canal de denúncia protegido e combate ao acobertamento profissional.</p></div>
+      <div class="card cor l"><span class="num">08</span><h3>Plantão jurídico, contábil e tributário</h3><p>Orientação para autônomos e pequenos escritórios, inclusive sobre a reforma tributária.</p></div>
+      <div class="card cor a"><span class="num">09</span><h3>SICCAU moderno, atendimento humano</h3><p>Menos burocracia, sistema que funciona e gente do outro lado quando você precisa.</p></div>
+      <div class="card cor v"><span class="num">10</span><h3>Início de carreira protegido</h3><p>Programa para quem está começando: RRT, contratos, honorários e combate a vaga falsa e estágio irregular.</p></div>
+    </div>
+    <p style="margin-top:22px"><a class="btn roxo" href="propostas.html">Ver as 118 propostas completas</a></p>
+  </div>
+</section>
+
+<section class="off perfis">
+  <div class="wrap">
+    <span class="kicker">Propostas por perfil</span>
+    <h2>A arquitetura é exercida de muitas maneiras. O CAU/SP precisa enxergar cada uma.</h2>
+    <p class="lead">Somos oposição a um CAU/SP que trata todos como se tivessem as mesmas condições de trabalho.</p>
+    <div class="grid g3" style="margin-top:22px">
+      <div class="card"><h3>Autônomos e escritórios</h3><p>Banco de Oportunidades, capacitação em gestão e honorários, plantão jurídico e contábil, tabela indicativa.</p><a href="propostas.html#autonomos">Propostas 79 a 85</a></div>
+      <div class="card"><h3>Jovens e recém-formados</h3><p>Programa de início de carreira, piso, combate a vaga falsa, custo do CAU revisado, saúde mental.</p><a href="propostas.html#jovens">Propostas 102 a 112</a></div>
+      <div class="card"><h3>Arquitetura de Interiores</h3><p>Comissão própria, defesa das atribuições, NBR 16280, RRT simplificado, revisão do RRT Múltiplo Mensal.</p><a href="propostas.html#interiores">Propostas 53 a 67</a></div>
+      <div class="card"><h3>Servidores públicos</h3><p>Concursos com carreira, piso da Lei 4.950-A, representação junto ao Executivo e Legislativo, ATHIS como política.</p><a href="propostas.html#servidores">Propostas 86 a 101</a></div>
+      <div class="card"><h3>Professores e pesquisa</h3><p>RRT de cargo para quem leciona, residência técnica com bolsa, IA no ensino, combate a curso livre enganoso.</p><a href="propostas.html#academia">Propostas 43 a 52</a></div>
+      <div class="card"><h3>Associações e entidades</h3><p>Presença regional do CAU nas associações, critérios públicos para convênios, núcleos de jovens.</p><a href="propostas.html#entidades">Propostas 68 a 78</a></div>
+      <div class="card"><h3>Longa trajetória, 60+</h3><p>Combate ao etarismo, atendimento presencial e humanizado, apoio no SICCAU e na IA, sucessão de escritórios, memória da profissão.</p><a href="propostas.html#trajetoria">Propostas 113 a 118</a></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Quem somos</span>
+    <h2>Gente que ajudou a construir o CAU e sabe o que precisa mudar</h2>
+    <div class="grid g2" style="margin-top:22px">
+      <div class="card pessoa"><img class="foto-p" src="img/candidatos/f000.jpg" alt="Afonso Celso Bueno Monteiro"><div><h3>Afonso Celso Bueno Monteiro</h3><small>Candidato a conselheiro federal. Primeiro presidente da história do CAU/SP.</small><p>Professor de projeto há 43 anos. Conselheiro do CREA/SP, coordenador da Câmara de Arquitetura, presidente interino do CREA/SP, vice-presidente do SASP. Presidente do CAU/SP na gestão fundadora.</p></div></div>
+      <div class="card pessoa"><img class="foto-p" src="img/candidatos/f001.jpg" alt="Marcelo de Oliveira Montoro"><div><h3>Marcelo de Oliveira Montoro</h3><small>Suplente de conselheiro federal. Conselheiro do CAU/SP em exercício.</small><p>Formado pela Católica de Santos em 1991. Mais de 30 anos em projetos de alta complexidade e concessões público-privadas. Conselheiro fiscal e titular do CAU/SP, coordenador do GT AsBEA-CAU.</p></div></div>
+    </div>
+    <h3 style="margin-top:26px">Quem coordena a chapa</h3>
+    <div class="grid g3" style="margin-top:12px">
+      <div class="card pessoa"><img class="foto-p" src="img/candidatos/f022.jpg" alt="Eder Roberto da Silva"><div><h3>Eder Roberto da Silva</h3><small>Responsável pela chapa. Dupla 11.</small><p>Ex-gerente regional do CAU/SP em Ribeirão Preto. Conhece o atendimento ao profissional no balcão da regional.</p></div></div>
+      <div class="card pessoa"><img class="foto-p" src="img/candidatos/f020.jpg" alt="Heliton Escorpeli"><div><h3>Heliton Escorpeli</h3><small>Corresponsável pela chapa. Dupla 10.</small><p>Coordenação da campanha junto com Eder e Nancy.</p></div></div>
+      <div class="card pessoa"><img class="foto-p" src="img/candidatos/f004.jpg" alt="Nancy Laranjeira Tavares de Camargo"><div><h3>Nancy Laranjeira</h3><small>Corresponsável pela chapa. Dupla 2.</small><p>Conselheira do CAU/SP, coordenou a Câmara Técnica de Inteligência Artificial em 2024 e 2025.</p></div></div>
+    </div>
+    <div class="grid g4" style="margin-top:18px">
+      <div class="card"><h3>10+ ex-gerentes regionais</h3><p>Ribeirão Preto, Rio Preto, Vale do Paraíba, Mogi das Cruzes, Presidente Prudente, Bauru e Sorocaba. Quem já atendeu o profissional no balcão.</p></div>
+      <div class="card"><h3>Fundadores do CAU</h3><p>Colegas que participaram da criação do Conselho e da transição do sistema Confea/Crea.</p></div>
+      <div class="card"><h3>Todas as regiões</h3><p>82 candidatos do interior e litoral, 94 duplas, 102 mulheres.</p></div>
+      <div class="card"><h3>Inteligência artificial</h3><p>Nancy Laranjeira coordenou a Câmara Técnica de IA do CAU/SP. A chapa fala de IA com quem estudou o tema no Conselho.</p></div>
+    </div>
+    <p style="margin-top:22px"><a class="btn roxo" href="candidatos.html">Conheça os 190 candidatos</a></p>
+  </div>
+</section>
+
+<section class="off">
+  <div class="wrap">
+    <span class="kicker">Artigos</span>
+    <h2>O que está em jogo nesta eleição</h2>
+    <div class="grid g3" style="margin-top:22px">
+      <div class="card artigo"><span class="meta">Mercado de trabalho · 6 min</span><h3><a href="artigos.html">Por que arquitetos estão perdendo espaço no mercado, e o que o CAU/SP pode fazer</a></h3><p>Precarização, baixa de registros e a ausência do Conselho onde o trabalho acontece.</p></div>
+      <div class="card artigo"><span class="meta">Custo do CAU · 5 min</span><h3><a href="artigos.html">Quanto o arquiteto paga por ano ao CAU, e para onde vai o dinheiro</a></h3><p>Anuidade, RRT e taxas, com os números públicos do Conselho.</p></div>
+      <div class="card artigo"><span class="meta">Interior · 4 min</span><h3><a href="artigos.html">Dez regionais para 645 municípios: a conta não fecha</a></h3><p>O que muda com mais cinco regionais e atendimento itinerante.</p></div>
+    </div>
+    <p style="margin-top:22px"><a class="btn roxo" href="artigos.html">Todos os artigos</a></p>
+  </div>
+</section>
+
+<section class="roxa" id="como-votar">
+  <div class="wrap">
+    <span class="kicker">Como votar</span>
+    <h2>Dia 5 de novembro, quinta-feira. Leva dois minutos.</h2>
+    <div class="grid g4 passos" style="margin-top:22px">
+      <div class="card"><h3>Confira seu registro</h3><p>Só vota quem tem registro ativo no CAU/SP até 21/10. Regularize no SICCAU antes.</p></div>
+      <div class="card"><h3>Acesse o sistema eleitoral</h3><p>No dia 5/11, entre no SiEN com seu login gov.br ou CPF e senha do SICCAU.</p></div>
+      <div class="card"><h3>Escolha a Chapa 2</h3><p>O voto é por chapa. Procure R.E.S.E.T., número 2, e confirme.</p></div>
+      <div class="card"><h3>Guarde o comprovante</h3><p>O voto é obrigatório para registro ativo. Quem não vota precisa justificar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap cta-cadastro">
+    <div>
+      <span class="kicker">Faça parte</span>
+      <h2>Receba as propostas e as novidades da campanha</h2>
+      <p class="lead">Um e-mail por semana até a eleição. Sem spam, e você sai quando quiser.</p>
+      <p class="aviso">Seus dados ficam com a chapa, não são compartilhados e são apagados após a eleição. Leia a <a href="privacidade.html">política de privacidade</a>.</p>
+    </div>
+    <form class="card" action="#" method="post" onsubmit="return false">
+      <div class="campo"><label for="n">Nome</label><input id="n" type="text" placeholder="Seu nome"></div>
+      <div class="campo"><label for="e">E-mail</label><input id="e" type="email" placeholder="voce@exemplo.com"></div>
+      <div class="campo"><label for="w">WhatsApp (opcional)</label><input id="w" type="tel" placeholder="(11) 90000-0000"></div>
+      <div class="campo"><label for="c">Cidade</label><input id="c" type="text" placeholder="Onde você atua"></div>
+      <div class="campo"><label for="p">Como você atua</label><select id="p"><option>Autônomo ou pequeno escritório</option><option>Recém-formado (até 29 anos)</option><option>Arquitetura de Interiores</option><option>Servidor público</option><option>Professor ou pesquisador</option><option>Entidade ou associação</option><option>Outro</option></select></div>
+      <label class="check"><input type="checkbox"> Autorizo o uso dos meus dados para receber comunicação da Chapa 2 R.E.S.E.T. durante a campanha, conforme a política de privacidade.</label>
+      <p style="margin-top:14px"><a class="btn amarelo" href="#">Quero apoiar a Chapa 2</a></p>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div><h4>Chapa 2 R.E.S.E.T.</h4><p>Reconstrução, Escuta, Suporte, Equidade, Transparência.<br>Eleições CAU/SP 2026, mandato 2027 a 2029.</p><p>Responsável pela chapa: Eder Roberto da Silva.</p></div>
+  <div><h4>Navegue</h4><a href="propostas.html">Propostas</a><a href="candidatos.html">Candidatos</a><a href="artigos.html">Artigos</a><a href="ideias.html">Envie sua ideia</a><a href="cadastro.html">Quero apoiar</a></div>
+  <div><h4>Canais oficiais</h4><a href="https://www.instagram.com/resetcau">Instagram @resetcau</a><a href="https://youtube.com/@resetcau">YouTube @resetcau</a><a href="https://www.linkedin.com/company/reset-cau/">LinkedIn</a><a href="https://www.facebook.com/resetcau">Facebook</a><a href="mailto:juridicochapareset@gmail.com">juridicochapareset@gmail.com</a></div>
+  <div class="legal">Esta é uma página da campanha eleitoral da Chapa 2 R.E.S.E.T. às Eleições CAU/SP 2026. Não constitui comunicação institucional do CAU/SP nem do CAU/BR. Endereço declarado como meio oficial de propaganda eleitoral no SiEN. <a href="privacidade.html" style="display:inline">Política de privacidade e LGPD</a>.</div>
+</div></footer>
+<script>
+(function(){var c=document.getElementById('video-eixos'),v=document.getElementById('vid-eixos');if(!c||!v)return;
+function tocar(){v.controls=true;v.play();c.classList.add('tocando');}
+c.querySelector('.play').addEventListener('click',tocar);
+v.addEventListener('click',function(){if(!c.classList.contains('tocando'))tocar();});
+v.addEventListener('ended',function(){c.classList.remove('tocando');v.controls=false;v.currentTime=0;});
+})();
+</script>
+</body>
+</html>

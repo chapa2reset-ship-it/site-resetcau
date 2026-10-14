@@ -1,0 +1,24 @@
+# Chapa 2 R.E.S.E.T. - cabeçalhos de segurança e cache
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(self), microphone=(), geolocation=()"
+  <FilesMatch "\.(css|js|webp|png|jpg|jpeg|mp4|woff2)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+Options -Indexes
+<FilesMatch "\.(bak|json|sql|md|env)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+</FilesMatch>
+<Files "apoie.json">
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+</Files>
