@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>As 118 propostas | Chapa 2 R.E.S.E.T.</title>
+<meta name="description" content="As 10 bandeiras e as 118 propostas da Chapa 2 R.E.S.E.T. para o CAU/SP, em 6 eixos e 7 perfis profissionais.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<style>
+.bandeira{display:flex;flex-direction:column}
+.bandeira h3{font-size:19px;padding-right:44px;margin-bottom:8px}
+.bandeira p{flex:1}
+.bandeira .props{margin-top:14px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.bandeira .props .qtd{display:inline-block;padding:6px 12px;border-radius:999px;background:var(--off);color:var(--cinza);font-size:12.5px;font-weight:700;border:1px solid var(--linha)}
+.bandeira:target{outline:3px solid var(--laranja)}
+.faixa-eixos{background:var(--amarelo);color:var(--roxo);padding:64px 0 72px;position:relative;overflow:hidden}
+.faixa-eixos::before{content:"4";position:absolute;right:-30px;top:-70px;font-size:460px;font-weight:800;line-height:1;color:rgba(42,22,70,.07);pointer-events:none}
+.faixa-eixos .wrap{position:relative}
+.faixa-eixos .cab{text-align:center;max-width:720px;margin:0 auto 36px}
+.faixa-eixos .kicker{color:var(--roxo);opacity:.7}
+.faixa-eixos h2{font-size:42px;line-height:1.05;margin:6px 0 12px;color:var(--roxo)}
+.faixa-eixos .lead{color:var(--roxo);font-size:17px;line-height:1.5;margin:0}
+.corpo-eixos{display:grid;grid-template-columns:380px 1fr;gap:56px;align-items:center}
+.video-eixos{aspect-ratio:3/4;border-radius:18px;background:linear-gradient(160deg,#3a2060,#2a1646 60%,#1c1430);border:3px solid var(--roxo);position:relative;display:flex;justify-content:center;align-items:center;box-shadow:0 18px 40px rgba(42,22,70,.25);cursor:pointer;overflow:hidden}
+.video-eixos video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#1c1430}
+.video-eixos.tocando .play,.video-eixos.tocando .legenda{opacity:0;pointer-events:none}
+.video-eixos .play,.video-eixos .legenda{transition:opacity .3s}
+.video-eixos .play{border:0;cursor:pointer;z-index:2;width:84px;height:84px;border-radius:50%;background:var(--amarelo);position:relative;box-shadow:0 0 0 12px rgba(245,196,0,.25)}
+.video-eixos .play::after{content:"";position:absolute;left:33px;top:24px;border-left:28px solid var(--roxo);border-top:18px solid transparent;border-bottom:18px solid transparent}
+.video-eixos .legenda{z-index:2;position:absolute;left:0;right:0;bottom:0;padding:18px 20px 20px;background:linear-gradient(transparent,rgba(28,20,48,.92));color:#fff}
+.video-eixos .legenda b{display:block;font-size:17px;margin-bottom:4px}
+.video-eixos .legenda span{display:block;font-size:12.5px;color:#d9d0ea;line-height:1.4}
+.caminho{list-style:none;margin:0;padding:0 0 0 8px;position:relative;align-self:center}
+.caminho::before{content:"";position:absolute;left:40px;top:28px;bottom:28px;border-left:3px dashed rgba(42,22,70,.35)}
+.passo{display:grid;grid-template-columns:66px 1fr;gap:24px;align-items:center;padding:0 0 26px;position:relative}
+.passo:last-child{padding-bottom:0}
+.passo .n{width:66px;height:66px;border-radius:50%;background:var(--roxo);color:var(--amarelo);display:grid;place-items:center;font-size:32px;font-weight:800;box-shadow:0 0 0 8px var(--amarelo);position:relative;z-index:1}
+.passo h3{font-size:22px;line-height:1.15;margin:0 0 5px;color:var(--roxo)}
+.passo p{color:var(--roxo);font-size:15.5px;line-height:1.5;margin:0;max-width:640px}
+.faixa-eixos .wrap-chamada{display:block}
+.chamada-reset{margin-top:72px;background:var(--roxo);color:#fff;border-radius:22px;padding:40px 44px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;box-shadow:0 22px 50px rgba(42,22,70,.3);position:relative;overflow:hidden}
+.chamada-reset::after{content:"";position:absolute;right:-90px;bottom:-120px;width:280px;height:280px;border-radius:50%;background:var(--laranja);opacity:.9}
+.chamada-reset .tx{position:relative;z-index:1}
+.chamada-reset .kicker{color:var(--amarelo);opacity:1}
+.chamada-reset h3{font-size:34px;line-height:1.05;margin:6px 0 12px;color:#fff}
+.chamada-reset p{color:#e9e2f5;font-size:16.5px;line-height:1.55;margin:0;max-width:560px}
+.chamada-reset .bts{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
+.chamada-reset .bts .btn{text-align:center}
+.chamada-reset .bts .vazado{border-color:#fff;color:#fff}
+.chamada-reset .bts .vazado:hover{background:#fff;color:var(--roxo)}
+@media (max-width:960px){.corpo-eixos{grid-template-columns:320px 1fr;gap:36px}.passo h3{font-size:20px}.passo p{font-size:14.5px}}
+@media (max-width:820px){.faixa-eixos h2{font-size:32px}.faixa-eixos::before{font-size:260px;top:-40px}.corpo-eixos{grid-template-columns:1fr}.video-eixos{max-width:300px;margin:0 auto;aspect-ratio:9/16}.caminho{margin-top:8px}.caminho::before{left:32px}.passo{grid-template-columns:54px 1fr;gap:16px}.passo .n{width:54px;height:54px;font-size:26px}.chamada-reset{grid-template-columns:1fr;padding:30px 24px;margin-top:32px}.chamada-reset h3{font-size:28px}.chamada-reset::after{display:none}}
+.prop-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
+.prop-principal{min-width:0}
+.caderno{margin-top:56px;padding-top:40px;border-top:1px solid var(--linha)}
+.painel-voto{position:sticky;top:90px;background:var(--roxo);color:#fff;border-radius:16px;padding:22px 20px 20px;box-shadow:0 16px 40px rgba(42,22,70,.28);display:flex;flex-direction:column;gap:10px;overflow:hidden}
+.painel-voto::after{content:"";position:absolute;right:-70px;bottom:-90px;width:200px;height:200px;border-radius:50%;background:var(--laranja);opacity:.85;pointer-events:none}
+.painel-voto>*{position:relative;z-index:1}
+.painel-voto .pv-topo{display:flex;align-items:center;gap:12px;margin-bottom:2px}
+.painel-voto .pv-logo{width:56px;height:56px;object-fit:contain;flex:none}
+.painel-voto .pv-data{display:flex;flex-direction:column;gap:5px;align-items:flex-start}
+.painel-voto .pv-selo{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--amarelo);color:#1d0f33;padding:3px 9px;border-radius:999px}
+.painel-voto .pv-timer{font-size:13px;color:#e9e2f5;line-height:1.2}
+.painel-voto .pv-timer b{font-size:22px;color:#fff;font-weight:800;margin-right:2px}
+.painel-voto h3{font-size:26px;line-height:1.05;margin:2px 0 0;color:#fff}
+.painel-voto h3 em{font-style:normal;color:var(--amarelo)}
+.painel-voto p{font-size:13.5px;line-height:1.5;color:#e9e2f5;margin:0}
+.painel-voto .btn{text-align:center;display:block}
+.painel-voto .pv-vazado{border:2px solid #fff;color:#fff;background:transparent}
+.painel-voto .pv-vazado:hover{background:#fff;color:var(--roxo)}
+.painel-voto .pv-filtros{display:none;margin-top:8px;background:#fff;border-radius:12px;padding:14px 14px 12px;color:var(--txt)}
+.painel-voto.com-filtros .pv-filtros{display:block}
+.painel-voto .pv-titulo{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--laranja);margin:0 0 10px}
+.painel-voto .pv-chips{display:flex;flex-wrap:wrap;gap:6px}
+.painel-voto .pv-chips span{font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;border:1px solid var(--linha);background:var(--off);color:var(--roxo);cursor:pointer;line-height:1.2}
+.painel-voto .pv-chips span:hover{border-color:var(--roxo)}
+.painel-voto .pv-chips span.on{background:var(--roxo);color:#fff;border-color:var(--roxo)}
+.bloco.fora{display:none}
+@media (max-width:960px){.prop-layout{grid-template-columns:minmax(0,1fr) 260px;gap:20px}}
+@media (max-width:820px){.prop-layout{grid-template-columns:1fr}.painel-voto{position:static;order:-1}.painel-voto .pv-filtros{display:block}.caderno{margin-top:36px;padding-top:28px}}
+.busca{display:flex;gap:10px;align-items:center;margin:0 0 18px}
+.busca input{flex:1;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #cfc6e0;border-radius:8px}
+.busca small{color:var(--cinza);white-space:nowrap}
+.bloco{background:#fff;border:1px solid var(--linha);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.bloco summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:16px 18px}
+.bloco summary::-webkit-details-marker{display:none}
+.bloco summary .k{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--laranja);min-width:64px}
+.bloco summary .t{font-weight:800;font-size:17px;flex:1}
+.bloco summary .c{font-size:12px;color:var(--cinza);background:var(--off);padding:4px 10px;border-radius:999px}
+.bloco summary::after{content:"+";font-weight:800;font-size:22px;color:var(--roxo);width:26px;text-align:center}
+.bloco[open] summary::after{content:"–"}
+.bloco[open] summary{border-bottom:1px solid var(--linha)}
+.lista2{list-style:none;margin:0;padding:6px 18px 14px;columns:2;column-gap:28px}
+.lista2 li{break-inside:avoid;display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f0ecf6;font-size:14.5px}
+.lista2 li b{color:var(--laranja);min-width:30px;font-size:13px;padding-top:2px}
+.lista2 li:target{background:#fff6cc;outline:2px solid var(--amarelo);border-radius:6px;padding:8px}
+.lista2 li.oculta{display:none}
+.lista2 li .ver{display:inline-block;margin-left:6px;font-size:12px;font-weight:700;color:var(--laranja);text-decoration:none;white-space:nowrap}
+.lista2 li .ver:hover{color:var(--roxo);text-decoration:underline}
+.parte{margin:40px 0 12px}
+.parte h2{font-size:22px}
+@media (max-width:820px){.lista2{columns:1}.bloco summary .k{display:none}}
+</style>
+</head>
+<body>
+<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div>
+<header class="topo"><div class="wrap">
+  <a class="marca" href="index.html"><img class="logo" src="img/cau-reset-badge.webp" alt="Chapa 2 R.E.S.E.T"><span>R.E.S.E.T.<small>Eleições CAU/SP 2026</small></span></a>
+  <nav><a href="index.html">Início</a><a href="propostas.html" class="ativo">Propostas</a><a href="candidatos.html">Candidatos</a><a href="artigos.html">Artigos</a><a href="apoie.html">Compartilhe</a><a href="ideias.html">Envie sua ideia</a><a href="cadastro.html" class="cta">Quero apoiar</a></nav>
+</div></header>
+
+<section class="roxa" style="padding:48px 0 40px">
+  <div class="wrap">
+    <span class="kicker">Caderno de propostas</span>
+    <h1 style="color:#fff">Quatro eixos. Dez bandeiras. Cento e dezoito propostas.</h1>
+    <p class="lead" style="color:#e9e2f5;max-width:760px">Os quatro eixos dizem para onde o CAU/SP vai. As dez bandeiras são o que muda primeiro no seu dia a dia. Abaixo delas, o caderno completo, por eixo e por perfil profissional, com número para você cobrar depois.</p>
+    <div class="acoes" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px"><a class="btn amarelo" href="#eixos">Os 4 eixos</a><a class="btn vazado" href="#bandeiras">As 10 bandeiras</a><a class="btn vazado" href="#todas">Ver as 118</a></div>
+  </div>
+</section>
+
+<section id="eixos" class="faixa-eixos">
+  <div class="wrap">
+    <div class="cab">
+      <span class="kicker">Para onde vai o CAU/SP</span>
+      <h2>Os 4 eixos da campanha</h2>
+      <p class="lead">Tudo o que a Chapa 2 propõe cabe em quatro direções. As 118 propostas são o detalhe. Os eixos são a prioridade.</p>
+    </div>
+    <div class="corpo-eixos">
+      <div class="video-eixos" id="video-eixos">
+        <video id="vid-eixos" src="video/eixos-eder.mp4" playsinline preload="metadata"></video>
+        <button class="play" type="button" aria-label="Assistir"></button>
+        <div class="legenda"><b>Os 4 eixos em 1 minuto</b><span>Eder Silva, coordenador da chapa. Vídeo de exemplo: a gravação definitiva entra aqui.</span></div>
+      </div>
+      <ol class="caminho">
+        <li class="passo">
+  <span class="n">1</span>
+  <div class="tx"><h3>Mercado de trabalho e tecnologia</h3><p>Ampliar o mercado de quem é registrado: Banco de Oportunidades, política própria para a Arquitetura de Interiores, reserva técnica com regra clara e capacitação em inteligência artificial para conquistar cliente.</p></div>
+</li>
+<li class="passo">
+  <span class="n">2</span>
+  <div class="tx"><h3>Fiscalização e valorização profissional</h3><p>Fiscalização efetiva contra o exercício ilegal da profissão e orientadora com quem está registrado. Cada irregular retirado do mercado é mais trabalho para quem paga anuidade.</p></div>
+</li>
+<li class="passo">
+  <span class="n">3</span>
+  <div class="tx"><h3>Suporte e atendimento</h3><p>Curso, capacitação, orientação técnica e em licitação, atendimento presencial nas regionais e o CAU/SP indo até o profissional do interior e do litoral.</p></div>
+</li>
+<li class="passo">
+  <span class="n">4</span>
+  <div class="tx"><h3>Transparência, legalidade e democracia</h3><p>Balancetes que qualquer arquiteto entende, decisões dentro da lei e gestão horizontal: um Conselho em que todos os grupos participam na proporção em que existem.</p></div>
+</li>
+      </ol>
+    </div>
+  </div>
+  <div class="wrap wrap-chamada">
+    <div class="chamada-reset">
+      <div class="tx">
+        <span class="kicker">Dia 5 de novembro</span>
+        <h3>É hora de dar um reset no CAU/SP.</h3>
+        <p>Vote Chapa 2. E não espere a eleição para fazer parte: envie a sua ideia, entre para a base de apoio e ajude a construir o Conselho que você quer ter.</p>
+      </div>
+      <div class="bts">
+        <a class="btn amarelo" href="index.html#como-votar">Como votar em 5/11</a>
+        <a class="btn vazado" href="cadastro.html">Quero apoiar</a>
+        <a class="btn vazado" href="ideias.html">Envie sua ideia</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bandeiras">
+  <div class="wrap prop-layout">
+    <div class="prop-principal">
+      <span class="kicker">O que muda primeiro</span>
+      <h2>As 10 bandeiras</h2>
+      <div class="nota-esboco">Esboço: seleção proposta a partir das 118, pela leitura da base (benefícios 51%, trabalho e oportunidades 46%). A coordenação valida a lista final, os textos e os números de cada bandeira.</div>
+      <div class="grid g2" style="margin-top:18px">
+        <div class="card cor  bandeira" id="b01">
+  <span class="num">01</span>
+  <span class="tag">Trabalho e oportunidades</span>
+  <h3>Banco de Oportunidades do CAU/SP</h3>
+  <p>Trabalho, estágio, concursos e credenciamentos num só lugar, com área própria para autônomos e pequenos escritórios e visibilidade para grupos pouco representados.</p>
+  <div class="props"><span class="qtd">3 propostas ligadas</span></div>
+</div>
+<div class="card cor l bandeira" id="b02">
+  <span class="num">02</span>
+  <span class="tag">Tecnologia</span>
+  <h3>IA para conquistar cliente</h3>
+  <p>Capacitação prática em inteligência artificial para se qualificar, achar cliente e vender projeto, com guia de boas práticas do CAU/SP.</p>
+  <div class="props"><span class="qtd">4 propostas ligadas</span></div>
+</div>
+<div class="card cor a bandeira" id="b03">
+  <span class="num">03</span>
+  <span class="tag">Benefícios</span>
+  <h3>Reserva técnica com regra clara</h3>
+  <p>Orientação oficial sobre relações comerciais, remuneração, indicação de produtos e conflito de interesse. O que pode, o que não pode.</p>
+  <div class="props"><span class="qtd">2 propostas ligadas</span></div>
+</div>
+<div class="card cor v bandeira" id="b04">
+  <span class="num">04</span>
+  <span class="tag">Benefícios</span>
+  <h3>Custo do CAU na mesa</h3>
+  <p>Transparência sobre tudo o que é cobrado e proposta ao CAU/BR de revisão de anuidade, taxas e RRT, começando pelo recém-formado e pelo RRT de Interiores.</p>
+  <div class="props"><span class="qtd">4 propostas ligadas</span></div>
+</div>
+<div class="card cor r bandeira" id="b05">
+  <span class="num">05</span>
+  <span class="tag">Trabalho e oportunidades</span>
+  <h3>Honorários justos</h3>
+  <p>Tabela indicativa, calculadora de custos de escritório e orientação sobre contratos, escopos e direitos autorais.</p>
+  <div class="props"><span class="qtd">3 propostas ligadas</span></div>
+</div>
+<div class="card cor x bandeira" id="b06">
+  <span class="num">06</span>
+  <span class="tag">Interior</span>
+  <h3>Mais 5 regionais</h3>
+  <p>Descentralizar o CAU/SP com novas regionais, ações itinerantes no interior e litoral e atendimento para jovens de cidades sem sede.</p>
+  <div class="props"><span class="qtd">3 propostas ligadas</span></div>
+</div>
+<div class="card cor  bandeira" id="b07">
+  <span class="num">07</span>
+  <span class="tag">Fiscalização</span>
+  <h3>Fim da "canetagem"</h3>
+  <p>Fiscalização inteligente e orientadora, canal de denúncia protegido e combate ao acobertamento profissional e ao exercício ilegal.</p>
+  <div class="props"><span class="qtd">4 propostas ligadas</span></div>
+</div>
+<div class="card cor l bandeira" id="b08">
+  <span class="num">08</span>
+  <span class="tag">Benefícios</span>
+  <h3>Plantão jurídico, contábil e tributário</h3>
+  <p>Orientação para autônomos e pequenos escritórios, inclusive sobre a reforma tributária, em cooperação com o CRC-SP.</p>
+  <div class="props"><span class="qtd">3 propostas ligadas</span></div>
+</div>
+<div class="card cor a bandeira" id="b09">
+  <span class="num">09</span>
+  <span class="tag">Atendimento</span>
+  <h3>SICCAU moderno, atendimento humano</h3>
+  <p>Menos burocracia, sistema que funciona e gente do outro lado quando você precisa. Indicadores públicos de atendimento.</p>
+  <div class="props"><span class="qtd">3 propostas ligadas</span></div>
+</div>
+<div class="card cor v bandeira" id="b10">
+  <span class="num">10</span>
+  <span class="tag">Jovens</span>
+  <h3>Início de carreira protegido</h3>
+  <p>Programa para quem está começando: RRT, contratos, honorários, combate a vaga falsa e estágio irregular, saúde mental.</p>
+  <div class="props"><span class="qtd">4 propostas ligadas</span></div>
+</div>
+      </div>
+
+      <div class="caderno" id="todas">
+        <span class="kicker">Caderno completo</span>
+        <h2>As 118 propostas</h2>
+        <p class="lead">Seis eixos para o Conselho e sete blocos por perfil profissional. Filtre por categoria ao lado, abra o bloco ou busque por palavra.</p>
+        <div class="busca"><input id="q" type="search" placeholder="Buscar nas 118 propostas: RRT, anuidade, interior, IA, honorários..."><small id="qn">118 propostas</small></div>
+        <div class="parte" data-parte="eixos"><h2>Parte 1. Seis eixos para o Conselho</h2></div>
+        <details class="bloco" open id="eixo1">
+  <summary><span class="k">Eixo 1</span><span class="t">Valorização profissional e mercado de trabalho</span><span class="c">5 propostas</span></summary>
+  <ol class="lista2"><li id="p01" data-n="01"><b>01</b><span>Banco de Oportunidades Profissionais do CAU/SP: trabalho, estágio, concursos e credenciamentos. <a class="ver" href="artigos/p001.html">Ver proposta</a></span></li><li id="p02" data-n="02"><b>02</b><span>Honorários justos, com orientação sobre contratos, escopos e direitos autorais. <a class="ver" href="artigos/p002.html">Ver proposta</a></span></li><li id="p03" data-n="03"><b>03</b><span>Defender todas as formas legítimas de atuação, sem critérios de seletividade. <a class="ver" href="artigos/p003.html">Ver proposta</a></span></li><li id="p04" data-n="04"><b>04</b><span>Campanhas educativas permanentes ao público sobre a relevância técnica do arquiteto. <a class="ver" href="artigos/p004.html">Ver proposta</a></span></li><li id="p05" data-n="05"><b>05</b><span>Programa de orientação sobre relações comerciais e conflitos de interesse: remuneração, indicação de produtos, benefícios de fornecedores. <a class="ver" href="artigos/p005.html">Ver proposta</a></span></li></ol>
+</details>
+<details class="bloco"  id="eixo2">
+  <summary><span class="k">Eixo 2</span><span class="t">Fiscalização que protege o profissional</span><span class="c">5 propostas</span></summary>
+  <ol class="lista2"><li id="p06" data-n="06"><b>06</b><span>Fiscalização que combata precarização, contratos abusivos e exercício ilegal, com prioridade para prevenção e orientação. <a class="ver" href="artigos/p006.html">Ver proposta</a></span></li><li id="p07" data-n="07"><b>07</b><span>Fiscalização digital inteligente, em sintonia com o CAU/BR, a partir de fontes públicas e dentro da LGPD. <a class="ver" href="artigos/p007.html">Ver proposta</a></span></li><li id="p08" data-n="08"><b>08</b><span>Canal de denúncias direto e protegido, com sigilo. <a class="ver" href="artigos/p008.html">Ver proposta</a></span></li><li id="p09" data-n="09"><b>09</b><span>Combater o acobertamento profissional, a "canetagem". <a class="ver" href="artigos/p009.html">Ver proposta</a></span></li><li id="p10" data-n="10"><b>10</b><span>Fluxos de cooperação com prefeituras e Ministério Público. <a class="ver" href="artigos/p010.html">Ver proposta</a></span></li></ol>
+</details>
+<details class="bloco"  id="eixo3">
+  <summary><span class="k">Eixo 3</span><span class="t">Tecnologia, inovação e inteligência artificial</span><span class="c">9 propostas</span></summary>
+  <ol class="lista2"><li id="p11" data-n="11"><b>11</b><span>Capacitar a categoria para a inteligência artificial. <a class="ver" href="artigos/p011.html">Ver proposta</a></span></li><li id="p12" data-n="12"><b>12</b><span>Protagonismo dos arquitetos na transformação digital. <a class="ver" href="artigos/p012.html">Ver proposta</a></span></li><li id="p13" data-n="13"><b>13</b><span>Princípios de uso ético da IA, com o CAU/BR. <a class="ver" href="artigos/p013.html">Ver proposta</a></span></li><li id="p14" data-n="14"><b>14</b><span>Guia de boas práticas de IA do CAU/SP. <a class="ver" href="artigos/p014.html">Ver proposta</a></span></li><li id="p15" data-n="15"><b>15</b><span>Integração de BIM, modelagem paramétrica e automação. <a class="ver" href="artigos/p015.html">Ver proposta</a></span></li><li id="p16" data-n="16"><b>16</b><span>Acesso a softwares, dados e ferramentas por parcerias institucionais. <a class="ver" href="artigos/p016.html">Ver proposta</a></span></li><li id="p17" data-n="17"><b>17</b><span>Canal de orientação sobre tecnologia: licenças e ferramentas livres. <a class="ver" href="artigos/p017.html">Ver proposta</a></span></li><li id="p18" data-n="18"><b>18</b><span>Suporte a pequenos escritórios na modernização. <a class="ver" href="artigos/p018.html">Ver proposta</a></span></li><li id="p19" data-n="19"><b>19</b><span>Modernizar o SICCAU imediatamente, mantendo atendimento humano. <a class="ver" href="artigos/p019.html">Ver proposta</a></span></li></ol>
+</details>
+<details class="bloco"  id="eixo4">
+  <summary><span class="k">Eixo 4</span><span class="t">Responsabilidade ambiental e social</span><span class="c">4 propostas</span></summary>
+  <ol class="lista2"><li id="p20" data-n="20"><b>20</b><span>Adaptação às mudanças climáticas. <a class="ver" href="artigos/p020.html">Ver proposta</a></span></li><li id="p21" data-n="21"><b>21</b><span>Eficiência energética e descarbonização. <a class="ver" href="artigos/p021.html">Ver proposta</a></span></li><li id="p22" data-n="22"><b>22</b><span>Especificação ambientalmente responsável: ciclo de vida e DAP. <a class="ver" href="artigos/p022.html">Ver proposta</a></span></li><li id="p23" data-n="23"><b>23</b><span>Inserir arquitetos na justiça territorial, acessibilidade, mobilidade e habitação social. <a class="ver" href="artigos/p023.html">Ver proposta</a></span></li></ol>
+</details>
+<details class="bloco"  id="eixo5">
+  <summary><span class="k">Eixo 5</span><span class="t">Transparência, legalidade e participação</span><span class="c">12 propostas</span></summary>
+  <ol class="lista2"><li id="p24" data-n="24"><b>24</b><span>Cumprir a Lei 12.378/2010. <a class="ver" href="artigos/p024.html">Ver proposta</a></span></li><li id="p25" data-n="25"><b>25</b><span>Combater favorecimento, personalismo e uso político do Conselho. <a class="ver" href="artigos/p025.html">Ver proposta</a></span></li><li id="p26" data-n="26"><b>26</b><span>Política de integridade. <a class="ver" href="artigos/p026.html">Ver proposta</a></span></li><li id="p27" data-n="27"><b>27</b><span>Prestar contas em linguagem clara. <a class="ver" href="artigos/p027.html">Ver proposta</a></span></li><li id="p28" data-n="28"><b>28</b><span>Respeitar o voto e o Plenário. <a class="ver" href="artigos/p028.html">Ver proposta</a></span></li><li id="p29" data-n="29"><b>29</b><span>Canais permanentes de consulta à categoria. <a class="ver" href="artigos/p029.html">Ver proposta</a></span></li><li id="p30" data-n="30"><b>30</b><span>Encontros regionais e Conferência Estadual de Arquitetura e Urbanismo. <a class="ver" href="artigos/p030.html">Ver proposta</a></span></li><li id="p31" data-n="31"><b>31</b><span>Parceria com entidades, ensino, associações e sindicatos. <a class="ver" href="artigos/p031.html">Ver proposta</a></span></li><li id="p32" data-n="32"><b>32</b><span>Descentralizar o CAU/SP com mais 5 regionais, ações itinerantes no interior e litoral. <a class="ver" href="artigos/p032.html">Ver proposta</a></span></li><li id="p33" data-n="33"><b>33</b><span>Reconhecer campos de atuação pouco valorizados. <a class="ver" href="artigos/p033.html">Ver proposta</a></span></li><li id="p34" data-n="34"><b>34</b><span>Mapear campos de atuação como instrumento de gestão. <a class="ver" href="artigos/p034.html">Ver proposta</a></span></li><li id="p35" data-n="35"><b>35</b><span>Publicar indicadores de atendimento e qualidade. <a class="ver" href="artigos/p035.html">Ver proposta</a></span></li></ol>
+</details>
+<details class="bloco"  id="eixo6">
+  <summary><span class="k">Eixo 6</span><span class="t">Inclusão, diversidade e representatividade</span><span class="c">7 propostas</span></summary>
+  <ol class="lista2"><li id="p36" data-n="36"><b>36</b><span>Metas e protocolos de acessibilidade: física, digital, comunicacional e atitudinal. <a class="ver" href="artigos/p036.html">Ver proposta</a></span></li><li id="p37" data-n="37"><b>37</b><span>Política de igualdade contra discriminação, assédio e exclusão. <a class="ver" href="artigos/p037.html">Ver proposta</a></span></li><li id="p38" data-n="38"><b>38</b><span>Canais seguros de acolhimento para relatos de discriminação. <a class="ver" href="artigos/p038.html">Ver proposta</a></span></li><li id="p39" data-n="39"><b>39</b><span>Pluralidade nos espaços de representação: regiões, gerações, raça, orientação sexual, pessoas com deficiência, neurodivergentes. <a class="ver" href="artigos/p039.html">Ver proposta</a></span></li><li id="p40" data-n="40"><b>40</b><span>Valorizar e dar visibilidade a grupos historicamente marginalizados. <a class="ver" href="artigos/p040.html">Ver proposta</a></span></li><li id="p41" data-n="41"><b>41</b><span>Visibilidade desses grupos no Banco de Oportunidades, com critérios públicos. <a class="ver" href="artigos/p041.html">Ver proposta</a></span></li><li id="p42" data-n="42"><b>42</b><span>Agenda regional que leve o Conselho às diferentes regiões. <a class="ver" href="artigos/p042.html">Ver proposta</a></span></li></ol>
+</details>
+        <div class="parte" data-parte="perfis"><h2>Parte 2. Por perfil profissional</h2><p class="lead" style="font-size:16px">A Arquitetura e o Urbanismo são exercidos de muitas maneiras. Somos oposição a um CAU/SP que trata todos como se tivessem as mesmas condições de trabalho.</p></div>
+        <details class="bloco" open id="academia">
+  <summary><span class="k">Perfil 1</span><span class="t">Professores e área acadêmica</span><span class="c">10 propostas</span></summary>
+  <ol class="lista2"><li id="p43" data-n="43"><b>43</b><span>Aproximar o CAU/SP das instituições de ensino. <a class="ver" href="artigos/p043.html">Ver proposta</a></span></li><li id="p44" data-n="44"><b>44</b><span>Valorizar docência, pesquisa e extensão. <a class="ver" href="artigos/p044.html">Ver proposta</a></span></li><li id="p45" data-n="45"><b>45</b><span>Remuneração, hora técnica e RRT de cargo ou função para quem leciona. <a class="ver" href="artigos/p045.html">Ver proposta</a></span></li><li id="p46" data-n="46"><b>46</b><span>Extensão curricularizada como campo estratégico. <a class="ver" href="artigos/p046.html">Ver proposta</a></span></li><li id="p47" data-n="47"><b>47</b><span>Pesquisas acadêmicas como produtos técnicos aplicados: planejamento urbano, ATHIS, regularização fundiária, patrimônio, clima. <a class="ver" href="artigos/p047.html">Ver proposta</a></span></li><li id="p48" data-n="48"><b>48</b><span>Projeto piloto de residência técnica e científica com bolsas. <a class="ver" href="artigos/p048.html">Ver proposta</a></span></li><li id="p49" data-n="49"><b>49</b><span>Debater IA no ensino. <a class="ver" href="artigos/p049.html">Ver proposta</a></span></li><li id="p50" data-n="50"><b>50</b><span>Protocolos de IA no ensino e na pesquisa. <a class="ver" href="artigos/p050.html">Ver proposta</a></span></li><li id="p51" data-n="51"><b>51</b><span>Combater publicidade enganosa de cursos livres que usam o termo "Arquitetura". <a class="ver" href="artigos/p051.html">Ver proposta</a></span></li><li id="p52" data-n="52"><b>52</b><span>Internacionalização: redes, intercâmbios, parcerias. <a class="ver" href="artigos/p052.html">Ver proposta</a></span></li></ol>
+</details>
+<details class="bloco"  id="interiores">
+  <summary><span class="k">Perfil 2</span><span class="t">Arquitetura de Interiores</span><span class="c">15 propostas</span></summary>
+  <ol class="lista2"><li id="p53" data-n="53"><b>53</b><span>Reconhecer Interiores como campo estratégico. <a class="ver" href="artigos/p053.html">Ver proposta</a></span></li><li id="p54" data-n="54"><b>54</b><span>Comissão especial de Arquitetura de Interiores no CAU/SP. <a class="ver" href="artigos/p054.html">Ver proposta</a></span></li><li id="p55" data-n="55"><b>55</b><span>Defender atribuições diante de conflitos com outras profissões e editais restritivos. <a class="ver" href="artigos/p055.html">Ver proposta</a></span></li><li id="p56" data-n="56"><b>56</b><span>Campanhas a síndicos e administradoras sobre a NBR 16280 (reformas). <a class="ver" href="artigos/p056.html">Ver proposta</a></span></li><li id="p57" data-n="57"><b>57</b><span>Capacitação permanente: reformas, NBR 16280, NBR 9050, RRT, contratos, retrofit. <a class="ver" href="artigos/p057.html">Ver proposta</a></span></li><li id="p58" data-n="58"><b>58</b><span>Orientação sobre a transição Confea/Crea para o CAU: ART, RRT, baixa. <a class="ver" href="artigos/p058.html">Ver proposta</a></span></li><li id="p59" data-n="59"><b>59</b><span>Referências técnicas de desempenho ambiental e energético. <a class="ver" href="artigos/p059.html">Ver proposta</a></span></li><li id="p60" data-n="60"><b>60</b><span>Rede aberta de apoio aos profissionais de interiores, sem intermediação privilegiada. <a class="ver" href="artigos/p060.html">Ver proposta</a></span></li><li id="p61" data-n="61"><b>61</b><span>Comunicação com condomínios, administradoras, incorporadoras, mostras, feiras e veículos. <a class="ver" href="artigos/p061.html">Ver proposta</a></span></li><li id="p62" data-n="62"><b>62</b><span>Simplificar o RRT de Interiores e propor ao CAU/BR revisão de valores, descontos e regras. <a class="ver" href="artigos/p062.html">Ver proposta</a></span></li><li id="p63" data-n="63"><b>63</b><span>Propor ao CAU/BR revisão do RRT Múltiplo Mensal, com opção desonerativa para consultoria e assessoria de baixa complexidade. <a class="ver" href="artigos/p063.html">Ver proposta</a></span></li><li id="p64" data-n="64"><b>64</b><span>Calculadora digital orientativa de custos de escritório e honorários. <a class="ver" href="artigos/p064.html">Ver proposta</a></span></li><li id="p65" data-n="65"><b>65</b><span>Integrar a fiscalização às bases municipais para localizar reformas sem RRT, dentro da LGPD. <a class="ver" href="artigos/p065.html">Ver proposta</a></span></li><li id="p66" data-n="66"><b>66</b><span>Participar das revisões de normas ABNT de Interiores. <a class="ver" href="artigos/p066.html">Ver proposta</a></span></li><li id="p67" data-n="67"><b>67</b><span>Orientar sobre contratos e aperfeiçoar conciliação e mediação nos processos ético-disciplinares. <a class="ver" href="artigos/p067.html">Ver proposta</a></span></li></ol>
+</details>
+<details class="bloco"  id="entidades">
+  <summary><span class="k">Perfil 3</span><span class="t">Associações e entidades</span><span class="c">11 propostas</span></summary>
+  <ol class="lista2"><li id="p68" data-n="68"><b>68</b><span>Diálogo permanente com entidades e associações regionais. <a class="ver" href="artigos/p068.html">Ver proposta</a></span></li><li id="p69" data-n="69"><b>69</b><span>Presença regional do CAU nas associações: orientação sobre início de carreira, IA, gestão e legislação. <a class="ver" href="artigos/p069.html">Ver proposta</a></span></li><li id="p70" data-n="70"><b>70</b><span>Mais arquitetos em conselhos, comitês e conferências de políticas públicas. <a class="ver" href="artigos/p070.html">Ver proposta</a></span></li><li id="p71" data-n="71"><b>71</b><span>Debates nas associações sobre planejamento, mobilidade e legislação. <a class="ver" href="artigos/p071.html">Ver proposta</a></span></li><li id="p72" data-n="72"><b>72</b><span>Cooperação técnica com prefeituras, consórcios, comitês de bacias e universidades. <a class="ver" href="artigos/p072.html">Ver proposta</a></span></li><li id="p73" data-n="73"><b>73</b><span>Apoiar programas e convênios de assistência técnica para municípios sem arquitetos. <a class="ver" href="artigos/p073.html">Ver proposta</a></span></li><li id="p74" data-n="74"><b>74</b><span>Agendas com outros conselhos profissionais, preservando atribuições. <a class="ver" href="artigos/p074.html">Ver proposta</a></span></li><li id="p75" data-n="75"><b>75</b><span>Critérios públicos e transparentes para convênios, parcerias e apoios. <a class="ver" href="artigos/p075.html">Ver proposta</a></span></li><li id="p76" data-n="76"><b>76</b><span>Núcleos de jovens nas associações. <a class="ver" href="artigos/p076.html">Ver proposta</a></span></li><li id="p77" data-n="77"><b>77</b><span>Orientar entidades sobre programas públicos de cultura. <a class="ver" href="artigos/p077.html">Ver proposta</a></span></li><li id="p78" data-n="78"><b>78</b><span>Cartilha de mobilidade urbana. <a class="ver" href="artigos/p078.html">Ver proposta</a></span></li></ol>
+</details>
+<details class="bloco"  id="autonomos">
+  <summary><span class="k">Perfil 4</span><span class="t">Autônomos e escritórios</span><span class="c">7 propostas</span></summary>
+  <ol class="lista2"><li id="p79" data-n="79"><b>79</b><span>Área do Banco de Oportunidades para autônomos e pequenos escritórios: parcerias, formação de equipes, contratações públicas e privadas. <a class="ver" href="artigos/p079.html">Ver proposta</a></span></li><li id="p80" data-n="80"><b>80</b><span>Material técnico e capacitação em gestão, planejamento financeiro, relacionamento com clientes e honorários. <a class="ver" href="artigos/p080.html">Ver proposta</a></span></li><li id="p81" data-n="81"><b>81</b><span>Defender atribuições e prevenir conflitos com outras profissões. <a class="ver" href="artigos/p081.html">Ver proposta</a></span></li><li id="p82" data-n="82"><b>82</b><span>Referências para honorários e preços, com tabela indicativa. <a class="ver" href="artigos/p082.html">Ver proposta</a></span></li><li id="p83" data-n="83"><b>83</b><span>Plantões de orientação jurídica, contábil e tributária, inclusive sobre a reforma tributária. <a class="ver" href="artigos/p083.html">Ver proposta</a></span></li><li id="p84" data-n="84"><b>84</b><span>Cooperação com o CRC-SP para acesso a informação contábil e tributária. <a class="ver" href="artigos/p084.html">Ver proposta</a></span></li><li id="p85" data-n="85"><b>85</b><span>Orientar sobre a vedação a comissões e presentes de fornecedores e sobre descontos comerciais legítimos ao cliente. <a class="ver" href="artigos/p085.html">Ver proposta</a></span></li></ol>
+</details>
+<details class="bloco"  id="servidores">
+  <summary><span class="k">Perfil 5</span><span class="t">Funcionários e servidores públicos</span><span class="c">16 propostas</span></summary>
+  <ol class="lista2"><li id="p86" data-n="86"><b>86</b><span>Mais arquitetos nos órgãos públicos, com concursos, carreira e remuneração compatíveis. <a class="ver" href="artigos/p086.html">Ver proposta</a></span></li><li id="p87" data-n="87"><b>87</b><span>Representantes do CAU/SP em câmaras, comissões e conselhos de políticas públicas. <a class="ver" href="artigos/p087.html">Ver proposta</a></span></li><li id="p88" data-n="88"><b>88</b><span>Valorização da carreira pública e piso salarial da Lei 4.950-A/1966. <a class="ver" href="artigos/p088.html">Ver proposta</a></span></li><li id="p89" data-n="89"><b>89</b><span>Apoiar sindicatos na defesa da carreira. <a class="ver" href="artigos/p089.html">Ver proposta</a></span></li><li id="p90" data-n="90"><b>90</b><span>Fórum de debates dos servidores. <a class="ver" href="artigos/p090.html">Ver proposta</a></span></li><li id="p91" data-n="91"><b>91</b><span>Representação junto ao Executivo e ao Legislativo. <a class="ver" href="artigos/p091.html">Ver proposta</a></span></li><li id="p92" data-n="92"><b>92</b><span>Mapear e orientar arquitetos de órgãos e empresas públicas sobre registro, exercício e responsabilidade. <a class="ver" href="artigos/p092.html">Ver proposta</a></span></li><li id="p93" data-n="93"><b>93</b><span>Respeito à legislação urbanística, inclusive na aprovação autodeclaratória. <a class="ver" href="artigos/p093.html">Ver proposta</a></span></li><li id="p94" data-n="94"><b>94</b><span>Apoiar concursos públicos de projetos. <a class="ver" href="artigos/p094.html">Ver proposta</a></span></li><li id="p95" data-n="95"><b>95</b><span>Aproximar o CAU/SP das prefeituras. <a class="ver" href="artigos/p095.html">Ver proposta</a></span></li><li id="p96" data-n="96"><b>96</b><span>Qualificar contratações públicas de Arquitetura: editais, escopos, remuneração, julgamento técnico. <a class="ver" href="artigos/p096.html">Ver proposta</a></span></li><li id="p97" data-n="97"><b>97</b><span>Monitorar concursos e editais com indícios de ilegalidade ou remuneração incompatível. <a class="ver" href="artigos/p097.html">Ver proposta</a></span></li><li id="p98" data-n="98"><b>98</b><span>Fomentar a ATHIS como política pública efetiva. <a class="ver" href="artigos/p098.html">Ver proposta</a></span></li><li id="p99" data-n="99"><b>99</b><span>Programas de assistência técnica para territórios vulneráveis. <a class="ver" href="artigos/p099.html">Ver proposta</a></span></li><li id="p100" data-n="100"><b>100</b><span>Defender a contratação de profissionais habilitados pelas instituições públicas. <a class="ver" href="artigos/p100.html">Ver proposta</a></span></li><li id="p101" data-n="101"><b>101</b><span>Campanha institucional sobre o valor dos arquitetos nos serviços públicos. <a class="ver" href="artigos/p101.html">Ver proposta</a></span></li></ol>
+</details>
+<details class="bloco"  id="jovens">
+  <summary><span class="k">Perfil 6</span><span class="t">Jovens profissionais e recém-formados até 29 anos</span><span class="c">11 propostas</span></summary>
+  <ol class="lista2"><li id="p102" data-n="102"><b>102</b><span>Programa de início de carreira: RRT, contratos, honorários, ética. <a class="ver" href="artigos/p102.html">Ver proposta</a></span></li><li id="p103" data-n="103"><b>103</b><span>Remuneração compatível e piso salarial para jovens. <a class="ver" href="artigos/p103.html">Ver proposta</a></span></li><li id="p104" data-n="104"><b>104</b><span>Combater falsas vagas, estágios irregulares e trabalho não remunerado. <a class="ver" href="artigos/p104.html">Ver proposta</a></span></li><li id="p105" data-n="105"><b>105</b><span>Combater preços incompatíveis que desvalorizam a categoria. <a class="ver" href="artigos/p105.html">Ver proposta</a></span></li><li id="p106" data-n="106"><b>106</b><span>Fiscalizar uso irregular de registros e ausência de responsabilidade técnica. <a class="ver" href="artigos/p106.html">Ver proposta</a></span></li><li id="p107" data-n="107"><b>107</b><span>Transparência nos custos cobrados pelo CAU e proposta ao CAU/BR de revisão de taxas, anuidades e RRT para recém-formados. <a class="ver" href="artigos/p107.html">Ver proposta</a></span></li><li id="p108" data-n="108"><b>108</b><span>Parcerias para acesso a softwares, equipamentos e serviços. <a class="ver" href="artigos/p108.html">Ver proposta</a></span></li><li id="p109" data-n="109"><b>109</b><span>Atendimento regional para jovens de cidades sem sede do CAU. <a class="ver" href="artigos/p109.html">Ver proposta</a></span></li><li id="p110" data-n="110"><b>110</b><span>Esclarecer as fronteiras entre CAU e Confea/Crea. <a class="ver" href="artigos/p110.html">Ver proposta</a></span></li><li id="p111" data-n="111"><b>111</b><span>Saúde mental e condições de trabalho: jornadas exaustivas e assédio. <a class="ver" href="artigos/p111.html">Ver proposta</a></span></li><li id="p112" data-n="112"><b>112</b><span>Convênios de benefícios sociais, saúde e qualidade de vida. <a class="ver" href="artigos/p112.html">Ver proposta</a></span></li></ol>
+</details>
+<details class="bloco"  id="trajetoria">
+  <summary><span class="k">Perfil 7</span><span class="t">Profissionais de longa trajetória</span><span class="c">6 propostas</span></summary>
+  <ol class="lista2"><li id="p113" data-n="113"><b>113</b><span>Valorizar os profissionais com 60 anos ou mais e combater o preconceito etário. <a class="ver" href="artigos/p113.html">Ver proposta</a></span></li><li id="p114" data-n="114"><b>114</b><span>Manter atendimento presencial, telefônico e humanizado onde for necessário. <a class="ver" href="artigos/p114.html">Ver proposta</a></span></li><li id="p115" data-n="115"><b>115</b><span>Apoio e formação no uso do SICCAU, das ferramentas digitais e da inteligência artificial. <a class="ver" href="artigos/p115.html">Ver proposta</a></span></li><li id="p116" data-n="116"><b>116</b><span>Promover o intercâmbio entre gerações. <a class="ver" href="artigos/p116.html">Ver proposta</a></span></li><li id="p117" data-n="117"><b>117</b><span>Orientar sobre transição de carreira, sucessão de escritórios, preservação do acervo técnico e direitos autorais. <a class="ver" href="artigos/p117.html">Ver proposta</a></span></li><li id="p118" data-n="118"><b>118</b><span>Preservar a memória da profissão e do CAU: acervo de documentos, exposições e relatos sobre obras e experiências profissionais. <a class="ver" href="artigos/p118.html">Ver proposta</a></span></li></ol>
+</details>
+        <p style="margin-top:26px"><a class="btn roxo" href="ideias.html">Falta alguma coisa? Envie sua ideia</a> &nbsp; <a class="btn amarelo" href="cadastro.html">Quero apoiar a Chapa 2</a></p>
+      </div>
+    </div>
+
+    <aside class="painel-voto" id="painel-prop" aria-label="Chamada para votar na Chapa 2">
+      <div class="pv-topo">
+        <img class="pv-logo" src="img/cau-reset-badge.webp" alt="Chapa 2 R.E.S.E.T.">
+        <div class="pv-data">
+          <span class="pv-selo">5 de novembro</span>
+          <span class="pv-timer" id="pv-timer" aria-live="polite">Faltam <b>…</b> dias</span>
+        </div>
+      </div>
+      <h3>Vote <em>Chapa 2</em><br>R.E.S.E.T.</h3>
+      <p>Quinta-feira, votação 100% online pelo SiEN do CAU. Leva dois minutos e vale por três anos de Conselho.</p>
+      <a class="btn amarelo" href="index.html#como-votar">Como votar em 5/11</a>
+      <a class="btn pv-vazado" href="cadastro.html">Quero apoiar</a>
+      <div class="pv-filtros" id="pv-filtros">
+        <p class="pv-titulo">Filtrar o caderno</p>
+        <div class="pv-chips" id="f-cat">
+          <span class="on" data-v="">Todas as 118</span>
+          <span data-v="eixo1">Valorização profissional</span><span data-v="eixo2">Fiscalização que protege o</span><span data-v="eixo3">Tecnologia, inovação</span><span data-v="eixo4">Responsabilidade ambiental</span><span data-v="eixo5">Transparência, legalidade</span><span data-v="eixo6">Inclusão, diversidade</span><span data-v="academia">Professores</span><span data-v="interiores">Arquitetura de Interiores</span><span data-v="entidades">Associações</span><span data-v="autonomos">Autônomos</span><span data-v="servidores">Funcionários</span><span data-v="jovens">Jovens profissionais</span><span data-v="trajetoria">Profissionais de longa tra</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div><h4>Chapa 2 R.E.S.E.T.</h4><p>Reconstrução, Escuta, Suporte, Equidade, Transparência.<br>Eleições CAU/SP 2026, mandato 2027 a 2029.</p><p>Responsável pela chapa: Eder Roberto da Silva.</p></div>
+  <div><h4>Navegue</h4><a href="propostas.html">Propostas</a><a href="candidatos.html">Candidatos</a><a href="artigos.html">Artigos</a><a href="ideias.html">Envie sua ideia</a><a href="cadastro.html">Quero apoiar</a></div>
+  <div><h4>Canais oficiais</h4><a href="https://www.instagram.com/resetcau">Instagram @resetcau</a><a href="https://youtube.com/@resetcau">YouTube @resetcau</a><a href="https://www.linkedin.com/company/reset-cau/">LinkedIn</a><a href="https://www.facebook.com/resetcau">Facebook</a></div>
+  <div class="legal">Esta é uma página da campanha eleitoral da Chapa 2 R.E.S.E.T. às Eleições CAU/SP 2026. Não constitui comunicação institucional do CAU/SP nem do CAU/BR. <a href="privacidade.html" style="display:inline">Política de privacidade e LGPD</a>.</div>
+</div></footer>
+<script>
+(function(){
+  var q=document.getElementById('q'),qn=document.getElementById('qn'),itens=document.querySelectorAll('.lista2 li'),blocos=document.querySelectorAll('.bloco'),cat='';
+  function norm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+  function aplica(){var v=norm(q.value.trim());var n=0;
+    itens.forEach(function(li){var ok=!v||norm(li.textContent).indexOf(v)>=0;li.classList.toggle('oculta',!ok);});
+    blocos.forEach(function(b){var vis=b.querySelectorAll('.lista2 li:not(.oculta)').length;var okCat=!cat||b.id===cat;var mostra=okCat&&vis>0;b.classList.toggle('fora',!mostra);if(mostra){n+=vis;if(v||cat)b.open=true;}});
+    document.querySelectorAll('.parte').forEach(function(pt){var prox=pt.nextElementSibling,tem=false;while(prox&&!prox.classList.contains('parte')){if(prox.classList.contains('bloco')&&!prox.classList.contains('fora'))tem=true;prox=prox.nextElementSibling;}pt.style.display=tem?'':'none';});
+    qn.textContent=n+' proposta'+(n===1?'':'s');}
+  q.addEventListener('input',aplica);
+  var chips=document.querySelectorAll('#f-cat span');chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.classList.remove('on')});c.classList.add('on');cat=c.getAttribute('data-v');aplica();var cad=document.getElementById('todas');if(cad&&cad.getBoundingClientRect().top<0)cad.scrollIntoView({behavior:'smooth',block:'start'});});});
+  // filtros só aparecem no painel quando o caderno chega na tela
+  var painel=document.getElementById('painel-prop'),cad=document.getElementById('todas');
+  if(painel&&cad){var ag=false;function checa(){ag=false;painel.classList.toggle('com-filtros',cad.getBoundingClientRect().top<=110);}window.addEventListener('scroll',function(){if(!ag){ag=true;requestAnimationFrame(checa);}},{passive:true});window.addEventListener('resize',checa);checa();}
+  // contagem regressiva pro dia da votação (5/11/2026)
+  (function(){var el=document.getElementById('pv-timer');if(!el)return;function atualiza(){var hoje=new Date();hoje.setHours(0,0,0,0);var dia=new Date(2026,10,5);var d=Math.round((dia-hoje)/86400000);if(d>1)el.innerHTML='Faltam <b>'+d+'</b> dias';else if(d===1)el.innerHTML='Falta <b>1</b> dia';else if(d===0)el.innerHTML='<b>É hoje!</b> Vote até as 23h59';else el.innerHTML='Votação encerrada';}atualiza();setInterval(atualiza,60*60*1000);})();
+  // abre o bloco certo quando chega por âncora (#p32)
+  function abre(){var h=location.hash;if(!h||h.length<2)return;var el;try{el=document.querySelector(h)}catch(e){return}if(el){var d=el.closest('details');if(d){d.open=true;d.classList.remove('fora');}el.scrollIntoView({block:'center'});}}
+  window.addEventListener('hashchange',abre);abre();
+})();
+</script>
+<script>
+(function(){var c=document.getElementById('video-eixos'),v=document.getElementById('vid-eixos');if(!c||!v)return;
+function tocar(){v.controls=true;v.play();c.classList.add('tocando');}
+c.querySelector('.play').addEventListener('click',tocar);
+v.addEventListener('click',function(){if(!c.classList.contains('tocando'))tocar();});
+v.addEventListener('ended',function(){c.classList.remove('tocando');v.controls=false;v.currentTime=0;});
+})();
+</script>
+</body>
+</html>

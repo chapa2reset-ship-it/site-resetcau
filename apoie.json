@@ -1,0 +1,30 @@
+{
+  "_nota": "Configuracao da pagina Apoie. A moldura de perfil e PROVISORIA: o arquivo molduras/perfil-provisoria.png ainda nao existe (o pacote 'canvas' do Node nao esta instalado), entao js/apoie.js desenha a moldura em tempo de execucao no navegador. Quando a arte oficial chegar: salvar o PNG 1080x1080 com transparencia em molduras/, apontar 'moldura_perfil' pra ele e trocar 'moldura_provisoria' pra false.",
+  "moldura_perfil": "molduras/perfil-provisoria.png",
+  "moldura_provisoria": true,
+  "selo": "img/cau-reset-badge.webp",
+  "site": "resetcau.com",
+  "titulo_share": "Eu voto Chapa 2 R.E.S.E.T.",
+  "legenda": "Dia 5 de novembro eu voto Chapa 2 R.E.S.E.T. pra resetar o CAU/SP. Mais trabalho, fiscalização de verdade, suporte ao profissional e transparência. Conheça as 118 propostas em resetcau.com #Chapa2 #RESET #CAUSP",
+  "whatsapp": "Dia 5/11 tem eleição do CAU/SP, 100% online. Eu estou com a Chapa 2 R.E.S.E.T. Veja as propostas: https://resetcau.com",
+  "post": {
+    "linha1": "Eu voto",
+    "linha2": "Chapa 2",
+    "linha3": "R.E.S.E.T.",
+    "linha4": "no dia 5 de novembro",
+    "rodape": "resetcau.com"
+  },
+  "moldura_texto": {
+    "linha1": "VOTE CHAPA 2",
+    "linha2": "R.E.S.E.T."
+  },
+  "cores": {
+    "roxo": "#2a1646",
+    "roxo2": "#1d0f33",
+    "amarelo": "#f5c400",
+    "laranja": "#ff7a2f",
+    "azul": "#3fb5ff",
+    "verde": "#3ddc84",
+    "rosa": "#ff5c9a"
+  }
+}

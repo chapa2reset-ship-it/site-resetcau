@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Envie sua ideia | Chapa 2 R.E.S.E.T.</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<style>
+.form-passos fieldset{border:0;padding:0;margin:0;min-width:0}
+.passos-topo{display:flex;align-items:center;gap:8px;margin-bottom:18px;font-size:13px;color:var(--cinza)}
+.passos-topo .passo-n{width:26px;height:26px;border-radius:50%;background:var(--off);color:var(--roxo);display:grid;place-items:center;font-weight:800;font-size:13px;border:1px solid var(--linha)}
+.passos-topo .passo-n.on{background:var(--roxo);color:#fff;border-color:var(--roxo)}
+.passos-topo .passo-n.feito{background:var(--amarelo);color:#1d0f33;border-color:var(--amarelo)}
+.passos-topo .passo-l{font-weight:700;color:var(--txt)}
+.passos-topo .passo-tr{flex:1;border-top:2px dashed var(--linha);margin:0 4px}
+.passo-intro{font-weight:700;margin:0 0 12px;color:var(--roxo)}
+.erro{color:#b3261e;font-size:13px;margin:0 0 10px}
+.passo-botoes{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap}
+.passo-botoes .btn{flex:1;text-align:center}
+.btn.vazado-roxo{border:2px solid var(--roxo);color:var(--roxo);background:transparent}
+.btn.vazado-roxo:hover{background:var(--roxo);color:#fff}
+.form-passos button.btn{font:inherit;cursor:pointer}
+.check span{flex:1}.check a{display:inline;color:var(--roxo);font-weight:700}
+</style>
+</head>
+<body>
+<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div>
+<header class="topo"><div class="wrap">
+  <a class="marca" href="index.html"><img class="logo" src="img/cau-reset-badge.webp" alt="Chapa 2 R.E.S.E.T"><span>R.E.S.E.T.<small>Eleições CAU/SP 2026</small></span></a>
+  <nav><a href="index.html">Início</a><a href="propostas.html">Propostas</a><a href="candidatos.html">Candidatos</a><a href="artigos.html">Artigos</a><a href="apoie.html">Compartilhe</a><a href="ideias.html" class="ativo">Envie sua ideia</a><a href="cadastro.html" class="cta">Quero apoiar</a></nav>
+</div></header>
+
+<section class="off">
+  <div class="wrap cta-cadastro">
+    <div>
+      <span class="kicker">Escuta</span>
+      <h1>Ninguém decide sem ouvir o profissional. Comece agora.</h1>
+      <p class="lead">O "E" de R.E.S.E.T. é Escuta. Conte qual é o seu maior problema com o CAU/SP hoje, ou mande uma proposta. Tudo que chegar entra na pauta das 10 bandeiras e da Conferência Estadual.</p>
+      <div class="card" style="margin-top:14px"><h3>O que mais chega até aqui</h3><ul class="lista"><li data-n="1">Dificuldade pra achar cliente e emprego.</li><li data-n="2">Anuidade e RRT caros pra quem está começando.</li><li data-n="3">SICCAU que não funciona e ninguém atende.</li><li data-n="4">Reserva técnica sem regra clara.</li><li data-n="5">Regional longe, atendimento só na capital.</li></ul></div>
+      <div class="nota-esboco">Esboço: esta página substitui a "enquete". Pergunta sobre dificuldades e prioridades é permitida pela Deliberação 009/2026 da Comissão Eleitoral; pergunta sobre voto ou preferência de chapa, não. Nada aqui mede intenção de voto.</div>
+    </div>
+    <form class="card form-passos" id="form-ideia" action="#" method="post" onsubmit="return false" novalidate>
+      <div class="passos-topo"><span class="passo-n on" data-p="1">1</span><span class="passo-l">Sua ideia</span><span class="passo-tr"></span><span class="passo-n" data-p="2">2</span><span class="passo-l">Seu contato</span></div>
+
+      <fieldset class="passo" data-passo="1">
+        <div class="campo"><label for="t">Sobre o que é</label><select id="t"><option>Mercado de trabalho e oportunidades</option><option>Custo do CAU: anuidade, RRT, taxas</option><option>Reserva técnica e relações comerciais</option><option>Tecnologia, softwares e IA</option><option>Fiscalização e exercício ilegal</option><option>Atendimento e SICCAU</option><option>Regionais e interior</option><option>Ensino e formação</option><option>Inclusão e acessibilidade</option><option>Outro</option></select></div>
+        <div class="campo"><label for="c">Cidade</label><input id="c" type="text" autocomplete="address-level2" placeholder="Onde você atua"></div>
+        <div class="campo"><label for="i">Sua ideia ou seu problema</label><textarea id="i" rows="6" placeholder="Conte em poucas linhas. Se for uma proposta, diga o que muda na prática."></textarea></div>
+        <p class="erro" id="erro1" hidden>Escreva a sua ideia ou o seu problema antes de continuar.</p>
+        <p style="margin-top:6px"><button class="btn amarelo" type="button" id="ir2">Continuar</button></p>
+      </fieldset>
+
+      <fieldset class="passo" data-passo="2" hidden>
+        <p class="passo-intro">Para a gente entrar em contato com você.</p>
+        <div class="campo"><label for="n">Nome</label><input id="n" type="text" autocomplete="name"></div>
+        <div class="campo"><label for="e">E-mail</label><input id="e" type="email" autocomplete="email" inputmode="email"></div>
+        <div class="campo"><label for="w">Telefone (WhatsApp)</label><input id="w" type="tel" autocomplete="tel" inputmode="tel" placeholder="(11) 90000-0000"></div>
+        <label class="check"><input type="checkbox" id="ok"><span>Autorizo o uso desta mensagem pela Chapa 2 R.E.S.E.T. para fins de campanha, sem divulgar meu nome, conforme a <a href="privacidade.html">política de privacidade</a>.</span></label>
+        <p class="erro" id="erro2" hidden>Preencha nome e pelo menos um contato, e marque a autorização.</p>
+        <p class="passo-botoes"><button class="btn vazado-roxo" type="button" id="voltar1">Voltar</button><button class="btn amarelo" type="submit" id="enviar">Enviar</button></p>
+      </fieldset>
+
+      <div class="passo" id="pronto" hidden>
+        <h3>Recebido. Obrigado por participar.</h3>
+        <p>Sua mensagem entra na pauta da chapa. Se deixou contato, a equipe pode te procurar para entender melhor.</p>
+        <p style="margin-top:14px"><a class="btn amarelo" href="cadastro.html">Quero apoiar a Chapa 2</a></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div><h4>Chapa 2 R.E.S.E.T.</h4><p>Eleições CAU/SP 2026.</p><p>Responsável pela chapa: Eder Roberto da Silva.</p></div>
+  <div><h4>Navegue</h4><a href="propostas.html">Propostas</a><a href="candidatos.html">Candidatos</a><a href="artigos.html">Artigos</a><a href="cadastro.html">Quero apoiar</a></div>
+  <div><h4>Canais oficiais</h4><a href="https://www.instagram.com/resetcau">Instagram @resetcau</a><a href="https://youtube.com/@resetcau">YouTube @resetcau</a><a href="https://www.linkedin.com/company/reset-cau/">LinkedIn</a></div>
+  <div class="legal">Página da campanha eleitoral da Chapa 2 R.E.S.E.T. Não constitui comunicação institucional do CAU/SP nem do CAU/BR. <a href="privacidade.html" style="display:inline">Política de privacidade e LGPD</a>.</div>
+</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
+<script src="js/reset-db.js"></script>
+<script>
+(function(){
+  var f=document.getElementById('form-ideia');if(!f)return;
+  var p1=f.querySelector('[data-passo="1"]'),p2=f.querySelector('[data-passo="2"]'),ok=document.getElementById('pronto');
+  var n1=f.querySelector('.passo-n[data-p="1"]'),n2=f.querySelector('.passo-n[data-p="2"]');
+  function mostra(q){p1.hidden=q!==1;p2.hidden=q!==2;ok.hidden=q!==3;n1.classList.toggle('on',q===1);n1.classList.toggle('feito',q>1);n2.classList.toggle('on',q===2);n2.classList.toggle('feito',q>2);f.scrollIntoView({behavior:'smooth',block:'start'});}
+  document.getElementById('ir2').addEventListener('click',function(){var e=document.getElementById('erro1');if(!document.getElementById('i').value.trim()){e.hidden=false;document.getElementById('i').focus();return;}e.hidden=true;mostra(2);document.getElementById('n').focus();});
+  document.getElementById('voltar1').addEventListener('click',function(){mostra(1);});
+  f.addEventListener('submit',function(ev){ev.preventDefault();var e=document.getElementById('erro2');var nome=document.getElementById('n').value.trim(),em=document.getElementById('e').value.trim(),tel=document.getElementById('w').value.trim();if(!nome||(!em&&!tel)||!document.getElementById('ok').checked){e.hidden=false;return;}e.hidden=true;var bt=document.getElementById('enviar');bt.disabled=true;bt.textContent='Enviando...';
+    ResetDb.enviarIdeia({tema:document.getElementById('t').value,cidade:document.getElementById('c').value,texto:document.getElementById('i').value,nome:nome,email:em,telefone:tel,autoriza:document.getElementById('ok').checked})
+      .then(function(){mostra(3);}).catch(function(err){e.textContent='Não deu pra enviar agora. Tenta de novo em um minuto.';e.hidden=false;console.error(err);}).finally(function(){bt.disabled=false;bt.textContent='Enviar';});});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compartilhe | Chapa 2 R.E.S.E.T.</title>
+<meta name="description" content="Coloque a moldura da Chapa 2 R.E.S.E.T. na sua foto, baixe o post pronto e convide colegas pelo WhatsApp. Tudo no seu aparelho, em um minuto.">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<style>
+.heroi.curto .wrap{grid-template-columns:1fr;padding:56px 20px 48px;max-width:760px}
+.heroi.curto .lead{max-width:600px}
+.privacidade{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13px;font-weight:600;color:#e9e2f5;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:8px 14px}
+.privacidade svg{width:16px;height:16px;flex:none}
+.passos-apoie{align-items:start}
+.passos-apoie .card h3{margin-bottom:6px}
+.passos-apoie .card>p.sub{color:var(--cinza);font-size:14px;margin-bottom:14px}
+.passos-apoie button.btn{font:inherit;cursor:pointer}
+.passos-apoie .btn{text-align:center}
+.btn.vazado-roxo{border:2px solid var(--roxo);color:var(--roxo);background:transparent}
+.btn.vazado-roxo:hover{background:var(--roxo);color:#fff}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn.verde{background:#25D366;color:#fff}
+.btn.verde:hover{background:#1ebe5a}
+.linha-btns{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 12px}
+.linha-btns .btn{flex:1;min-width:140px}
+.linha-btns.secundaria .btn{padding:10px 14px;font-size:14px}
+.palco{position:relative;width:100%;max-width:420px;margin:0 auto 12px;aspect-ratio:1/1;border-radius:14px;overflow:hidden;background:var(--roxo2);user-select:none;-webkit-user-select:none;touch-action:pan-y pinch-zoom;cursor:default;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.palco.com-foto{touch-action:none;cursor:grab}
+.palco.arrastando{cursor:grabbing}
+.palco canvas{display:block;width:100%;height:100%}
+#cv-guia{position:absolute;inset:0;pointer-events:none}
+.vazio{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#fff;text-align:center;padding:24px;pointer-events:none}
+.vazio[hidden]{display:none}
+.palco.com-foto .vazio{display:none}
+.vazio b{font-size:17px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.vazio span{font-size:13px;opacity:.9;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.zoom{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--cinza);font-weight:600;background:var(--off);border-radius:10px;padding:10px 12px;margin-bottom:12px}
+.zoom input[type=range]{flex:1;accent-color:var(--roxo);min-width:0}
+.dica{font-size:13px;color:var(--cinza);margin:0 0 12px}
+.post-quadro{width:100%;max-width:360px;margin:0 auto 14px;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:var(--roxo2);display:grid;place-items:center;color:#cfc6e0;font-size:13px}
+.post-quadro img{display:block;width:100%;height:100%;object-fit:cover}
+textarea.legenda{width:100%;font:inherit;font-size:14px;line-height:1.5;padding:12px 14px;border:1px solid #cfc6e0;border-radius:8px;background:#fff;resize:vertical;min-height:120px;color:var(--txt);margin-bottom:10px}
+.aviso-ig{font-size:12.5px;color:#5a4700;background:#fff6cc;border:1px dashed #d9a900;border-radius:8px;padding:8px 12px;margin:0}
+.whats-previa{background:var(--off);border-left:4px solid #25D366;border-radius:8px;padding:12px 14px;font-size:14px;color:#3b3350;margin:0 0 14px;white-space:pre-wrap;word-break:break-word}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(12px);background:var(--txt);color:#fff;padding:12px 18px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;transition:.25s;pointer-events:none;z-index:50;max-width:92vw;text-align:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.5)}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+@media (max-width:820px){
+  .heroi.curto .wrap{padding:28px 16px 26px}
+  .heroi.curto h1{font-size:26px;line-height:1.1}
+  .heroi.curto .lead{font-size:14.5px}
+  .privacidade{font-size:11.5px;padding:6px 10px;margin-top:12px}
+  .passos-apoie{gap:14px}
+  .passos-apoie .card{padding:16px 14px}
+  .passos-apoie .card h3{font-size:16px}
+  .passos-apoie .card>p.sub{font-size:13px;margin-bottom:10px}
+  .passos-apoie .btn{padding:10px 12px;font-size:13.5px;border-radius:8px}
+  .linha-btns{gap:8px;margin-bottom:10px}
+  .linha-btns .btn{min-width:0}
+  .linha-btns.secundaria .btn{padding:8px 10px;font-size:13px}
+  .palco{max-width:100%;border-radius:12px}
+  .vazio b{font-size:15px}.vazio span{font-size:12px}
+  .zoom{padding:8px 10px;font-size:12px;margin-bottom:10px}
+  .dica{font-size:12px;margin-bottom:10px}
+  .post-quadro{max-width:260px}
+  textarea.legenda{font-size:13px;min-height:96px;padding:10px 12px}
+  .aviso-ig{font-size:11.5px;padding:7px 10px}
+  .whats-previa{font-size:13px;padding:10px 12px}
+  .passos .num,.passos .card .n{width:26px;height:26px;font-size:13px}
+}
+</style>
+</head>
+<body>
+<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div>
+<header class="topo"><div class="wrap">
+  <a class="marca" href="index.html"><img class="logo" src="img/cau-reset-badge.webp" alt="Chapa 2 R.E.S.E.T"><span>R.E.S.E.T.<small>Eleições CAU/SP 2026</small></span></a>
+  <nav><a href="index.html">Início</a><a href="propostas.html">Propostas</a><a href="candidatos.html">Candidatos</a><a href="artigos.html">Artigos</a><a href="apoie.html" class="ativo">Compartilhe</a><a href="ideias.html">Envie sua ideia</a><a href="cadastro.html" class="cta">Quero apoiar</a></nav>
+</div></header>
+
+<section class="heroi curto">
+  <span class="bolha b1"></span><span class="bolha b2"></span><span class="bolha b3"></span><span class="bolha b4"></span>
+  <div class="wrap">
+    <div>
+      <span class="kicker">Compartilhe</span>
+      <h1>Mostre que você está com a <span>Chapa 2</span></h1>
+      <p class="lead">Coloque a moldura na sua foto, baixe e compartilhe nos grupos e nas redes. Leva um minuto.</p>
+      <span class="privacidade"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Sua foto não é enviada a lugar nenhum: tudo acontece no seu aparelho.</span>
+    </div>
+  </div>
+</section>
+
+<section class="off">
+  <div class="wrap">
+    <div class="grid g3 passos passos-apoie">
+
+      <div class="card">
+        <h3>Foto de perfil com moldura</h3>
+        <p class="sub">Pra WhatsApp, Instagram e LinkedIn. O que fica fora do círculo não aparece no perfil.</p>
+        <input type="file" id="arquivo" accept="image/*" hidden>
+        <input type="file" id="arquivo-camera" accept="image/*" capture="user" hidden>
+        <div class="linha-btns">
+          <button class="btn amarelo" type="button" id="btn-escolher">Escolher foto</button>
+          <button class="btn vazado-roxo" type="button" id="btn-camera">Tirar foto agora</button>
+        </div>
+        <div class="palco" id="palco">
+          <canvas id="cv-previa" width="420" height="420"></canvas>
+          <canvas id="cv-guia" width="420" height="420"></canvas>
+          <div class="vazio" id="vazio"><b>Sua foto entra aqui</b><span>Toque em "Escolher foto" pra começar</span></div>
+        </div>
+        <div class="zoom"><span>Menor</span><input type="range" id="zoom" min="0.35" max="3" step="0.01" value="1" aria-label="Tamanho da foto"><span>Maior</span></div>
+        <p class="dica">Arraste pra posicionar. Pinça (dois dedos) ou a roda do mouse pra ajustar o tamanho.</p>
+        <div class="linha-btns secundaria">
+          <button class="btn vazado-roxo" type="button" id="btn-centralizar">Centralizar</button>
+          <button class="btn vazado-roxo" type="button" id="btn-trocar">Trocar foto</button>
+        </div>
+        <div class="linha-btns">
+          <button class="btn amarelo" type="button" id="btn-baixar-perfil" disabled>Baixar foto com moldura</button>
+          <button class="btn roxo" type="button" id="btn-compartilhar-perfil" disabled hidden>Salvar na galeria / enviar</button>
+        </div>
+        <p class="nota-esboco" id="nota-moldura" hidden>Moldura provisória, desenhada pelo próprio site. A arte oficial da chapa entra no lugar assim que chegar.</p>
+      </div>
+
+      <div class="card">
+        <h3>Post pronto para compartilhar</h3>
+        <p class="sub">Arte no formato do feed (1080 x 1350). Não precisa de foto: é só compartilhar e colar a legenda.</p>
+        <div class="post-quadro">
+          <span id="post-carregando">Preparando a arte...</span>
+          <img id="post-previa" alt="Post: Eu voto Chapa 2 R.E.S.E.T. no dia 5 de novembro" hidden>
+        </div>
+        <div class="linha-btns">
+          <button class="btn amarelo" type="button" id="btn-compartilhar-post" disabled>Compartilhar</button>
+          <button class="btn vazado-roxo" type="button" id="btn-baixar-post" disabled>Baixar</button>
+        </div>
+        <label for="legenda" style="font-size:14px;font-weight:600;display:block;margin-bottom:6px">Legenda pronta</label>
+        <textarea class="legenda" id="legenda" readonly rows="5">Dia 5 de novembro eu voto Chapa 2 R.E.S.E.T. pra resetar o CAU/SP. Mais trabalho, fiscalização de verdade, suporte ao profissional e transparência. Conheça as 118 propostas em resetcau.com #Chapa2 #RESET #CAUSP</textarea>
+        <div class="linha-btns"><button class="btn roxo" type="button" id="btn-copiar-legenda">Copiar legenda</button></div>
+        <p class="aviso-ig">O Instagram não aceita legenda automática: cole a legenda depois de escolher a imagem.</p>
+      </div>
+
+      <div class="card">
+        <h3>Convide pelo WhatsApp</h3>
+        <p class="sub">Mande pra um colega, pro grupo do escritório ou da turma. A mensagem já vai pronta.</p>
+        <p class="whats-previa" id="whats-previa">Dia 5/11 tem eleição do CAU/SP, 100% online. Eu estou com a Chapa 2 R.E.S.E.T. Veja as propostas: https://resetcau.com</p>
+        <div class="linha-btns"><a class="btn verde" id="btn-whats" href="https://wa.me/?text=Dia%205%2F11%20tem%20elei%C3%A7%C3%A3o%20do%20CAU%2FSP%2C%20100%25%20online.%20Eu%20estou%20com%20a%20Chapa%202%20R.E.S.E.T.%20Veja%20as%20propostas%3A%20https%3A%2F%2Fresetcau.com" target="_blank" rel="noopener">Enviar pelo WhatsApp</a></div>
+        <p class="dica" style="margin:0">Abre o WhatsApp com a mensagem escrita. Você só escolhe pra quem mandar.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div><h4>Chapa 2 R.E.S.E.T.</h4><p>Eleições CAU/SP 2026.</p><p>Responsável pela chapa: Eder Roberto da Silva.</p></div>
+  <div><h4>Navegue</h4><a href="propostas.html">Propostas</a><a href="candidatos.html">Candidatos</a><a href="artigos.html">Artigos</a><a href="ideias.html">Envie sua ideia</a><a href="cadastro.html">Quero apoiar</a></div>
+  <div><h4>Canais oficiais</h4><a href="https://www.instagram.com/resetcau">Instagram @resetcau</a><a href="https://youtube.com/@resetcau">YouTube @resetcau</a><a href="https://www.linkedin.com/company/reset-cau/">LinkedIn</a></div>
+  <div class="legal">Página da campanha eleitoral da Chapa 2 R.E.S.E.T. Não constitui comunicação institucional do CAU/SP nem do CAU/BR. <a href="privacidade.html" style="display:inline">Política de privacidade e LGPD</a>.</div>
+</div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/apoie.js"></script>
+</body>
+</html>

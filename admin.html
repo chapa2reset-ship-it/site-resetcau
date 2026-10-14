@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel | Chapa 2 R.E.S.E.T.</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<style>
+body{background:var(--off)}
+.adm-wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+.adm-login{max-width:420px;margin:60px auto}
+.adm-topo{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.adm-topo h1{font-size:24px;margin:0}
+.adm-topo .quem{font-size:13px;color:var(--cinza)}
+.adm-abas{display:flex;gap:8px;margin:0 0 16px;flex-wrap:wrap}
+.adm-abas button{font:inherit;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;border:1px solid var(--linha);background:#fff;color:var(--roxo);cursor:pointer}
+.adm-abas button.on{background:var(--roxo);color:#fff;border-color:var(--roxo)}
+.adm-abas button b{margin-left:6px;background:var(--amarelo);color:#1d0f33;border-radius:999px;padding:1px 8px;font-size:12px}
+.adm-barra{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.adm-barra input{flex:1;min-width:220px;font:inherit;font-size:15px;padding:10px 12px;border:1px solid #cfc6e0;border-radius:8px}
+.adm-barra .btn{padding:10px 14px;font-size:14px}
+.adm-barra small{color:var(--cinza)}
+.tabela{background:#fff;border:1px solid var(--linha);border-radius:12px;overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #f0ecf6;vertical-align:top}
+th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--cinza);background:#faf8fd;position:sticky;top:0}
+td.txt{max-width:420px;white-space:pre-wrap}
+td .zap{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:#25d366;border-radius:6px;padding:5px 9px;text-decoration:none;white-space:nowrap}
+td .zap:hover{background:#1da851}
+td .semzap{font-size:11px;color:var(--cinza)}
+td .apagar{font:inherit;font-size:12px;color:#b3261e;background:none;border:1px solid #f1c7c3;border-radius:6px;padding:4px 8px;cursor:pointer}
+td .apagar:hover{background:#fdecea}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--off);color:var(--roxo)}
+.tag.sim{background:#e6f8ee;color:#1b7a3d}
+.vazio{padding:40px;text-align:center;color:var(--cinza)}
+.erro{color:#b3261e;font-size:13px;margin:8px 0 0}
+.btn.sair{background:#fff;border:1px solid var(--linha);color:var(--roxo);padding:8px 14px;font-size:13px}
+.campo input{font:inherit;font-size:16px;padding:12px 14px;border:1px solid #cfc6e0;border-radius:8px}
+button.btn{font:inherit;cursor:pointer}
+@media (max-width:720px){td.txt{max-width:240px}}
+</style>
+</head>
+<body>
+<div class="adm-wrap">
+
+  <div class="card adm-login" id="login">
+    <span class="kicker">Painel da chapa</span>
+    <h2 style="margin:4px 0 14px">Entrar</h2>
+    <form id="form-login" onsubmit="return false">
+      <div class="campo"><label for="le">E-mail</label><input id="le" type="email" autocomplete="username"></div>
+      <div class="campo"><label for="ls">Senha</label><input id="ls" type="password" autocomplete="current-password"></div>
+      <p><button class="btn amarelo" type="submit" id="entrar">Entrar</button></p>
+      <p class="erro" id="erro-login" hidden></p>
+      <p style="font-size:12.5px;color:var(--cinza);margin-top:14px">Esqueceu a senha? <a href="#" id="recuperar" style="display:inline;color:var(--roxo)">Receber link por e-mail</a>.</p>
+    </form>
+  </div>
+
+  <div id="painel" hidden>
+    <div class="adm-topo">
+      <div><h1>Painel da Chapa 2 R.E.S.E.T.</h1><div class="quem" id="quem"></div></div>
+      <button class="btn sair" id="sair">Sair</button>
+    </div>
+    <div class="adm-abas">
+      <button class="on" data-aba="apoiadores">Apoiadores <b id="n-apo">0</b></button>
+      <button data-aba="ideias">Ideias <b id="n-ide">0</b></button>
+    </div>
+    <div class="adm-barra">
+      <input id="busca" type="search" placeholder="Buscar por nome, cidade, e-mail, texto...">
+      <button class="btn roxo" id="exportar">Baixar CSV</button>
+      <button class="btn sair" id="recarregar">Atualizar</button>
+      <small id="info"></small>
+    </div>
+    <div class="tabela" id="tabela"></div>
+    <p class="erro" id="erro-painel" hidden></p>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
+<script src="js/reset-db.js"></script>
+<script>
+(function(){
+  var db=ResetDb.cliente(), aba='apoiadores', dados={apoiadores:[],ideias:[]}, usuario=null;
+  var $=function(id){return document.getElementById(id)};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function zap(tel,nome,tipo){var d=String(tel||'').replace(/\D/g,'');if(!d)return '';if(d.length<=11)d='55'+d;var n=(nome||'').trim().split(' ')[0];var msg=tipo==='ideia'?'Olá'+(n?', '+n:'')+'! Aqui é da Chapa 2 R.E.S.E.T. Recebemos a sua ideia no site e queremos entender melhor. Pode falar agora?':'Olá'+(n?', '+n:'')+'! Aqui é da Chapa 2 R.E.S.E.T. Obrigado por entrar na nossa base. Dia 5 de novembro a votação é 100% online. Posso te mandar as propostas por aqui?';return 'https://wa.me/'+d+'?text='+encodeURIComponent(msg);}
+  function btZap(tel,nome,tipo){var u=zap(tel,nome,tipo);return u?'<a class="zap" href="'+u+'" target="_blank" rel="noopener" title="Abrir conversa no WhatsApp">WhatsApp</a>':'<span class="semzap">sem telefone</span>';}
+  function dt(s){try{return new Date(s).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'})}catch(e){return s}}
+
+  async function sessao(){var r=await db.auth.getSession();usuario=r.data.session?r.data.session.user:null;mostra();if(usuario)carregar();}
+  function mostra(){$('login').hidden=!!usuario;$('painel').hidden=!usuario;if(usuario)$('quem').textContent='Logado como '+usuario.email;}
+
+  $('form-login').addEventListener('submit',async function(){var e=$('erro-login');e.hidden=true;$('entrar').disabled=true;
+    var r=await db.auth.signInWithPassword({email:$('le').value.trim(),password:$('ls').value});$('entrar').disabled=false;
+    if(r.error){e.textContent='E-mail ou senha não conferem.';e.hidden=false;return;}usuario=r.data.user;mostra();carregar();});
+  $('recuperar').addEventListener('click',async function(ev){ev.preventDefault();var em=$('le').value.trim();var e=$('erro-login');if(!em){e.textContent='Digite o e-mail primeiro.';e.hidden=false;return;}
+    var r=await db.auth.resetPasswordForEmail(em,{redirectTo:location.origin+location.pathname});e.textContent=r.error?'Não deu pra enviar o link.':'Link enviado pro e-mail (se ele estiver cadastrado).';e.hidden=false;});
+  $('sair').addEventListener('click',async function(){await db.auth.signOut();usuario=null;mostra();});
+  $('recarregar').addEventListener('click',carregar);
+  document.querySelectorAll('.adm-abas button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.adm-abas button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');aba=b.getAttribute('data-aba');render();});});
+  $('busca').addEventListener('input',render);
+
+  async function carregar(){var e=$('erro-painel');e.hidden=true;$('info').textContent='Carregando...';
+    var a=await db.from('apoiadores').select('*').order('criado_em',{ascending:false}).limit(5000);
+    var i=await db.from('ideias').select('*').order('criado_em',{ascending:false}).limit(5000);
+    if(a.error||i.error){e.textContent='Erro ao ler o banco: '+((a.error||i.error).message);e.hidden=false;$('info').textContent='';return;}
+    dados.apoiadores=a.data||[];dados.ideias=i.data||[];$('n-apo').textContent=dados.apoiadores.length;$('n-ide').textContent=dados.ideias.length;render();}
+
+  function filtrados(){var q=$('busca').value.trim().toLowerCase();var lista=dados[aba];if(!q)return lista;return lista.filter(function(r){return JSON.stringify(r).toLowerCase().indexOf(q)>=0});}
+
+  function render(){var lista=filtrados();$('info').textContent=lista.length+' de '+dados[aba].length;var t=$('tabela');
+    if(!lista.length){t.innerHTML='<div class="vazio">Nada por aqui ainda.</div>';return;}
+    var h='<table><thead><tr>';
+    if(aba==='apoiadores')h+='<th>Quando</th><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Cidade</th><th>Atuação</th><th>Registro</th><th>Volunt.</th><th>Contato</th><th>Origem</th><th></th>';
+    else h+='<th>Quando</th><th>Tema</th><th>Ideia ou problema</th><th>Cidade</th><th>Nome</th><th>E-mail</th><th>Telefone</th><th>Contato</th><th>Origem</th><th></th>';
+    h+='</tr></thead><tbody>';
+    lista.forEach(function(r){h+='<tr>';
+      if(aba==='apoiadores')h+='<td>'+dt(r.criado_em)+'</td><td><b>'+esc(r.nome)+'</b></td><td>'+esc(r.email)+'</td><td>'+esc(r.whatsapp)+'</td><td>'+esc(r.cidade)+'</td><td>'+esc(r.atuacao)+'</td><td>'+esc(r.registro_cau)+'</td><td>'+(r.voluntario?'<span class="tag sim">sim</span>':'<span class="tag">não</span>')+'</td><td>'+btZap(r.whatsapp,r.nome,'apoio')+'</td><td><small>'+esc(r.origem)+'</small></td>';
+      else h+='<td>'+dt(r.criado_em)+'</td><td><span class="tag">'+esc(r.tema)+'</span></td><td class="txt">'+esc(r.texto)+'</td><td>'+esc(r.cidade)+'</td><td>'+esc(r.nome)+'</td><td>'+esc(r.email)+'</td><td>'+esc(r.telefone)+'</td><td>'+btZap(r.telefone,r.nome,'ideia')+'</td><td><small>'+esc(r.origem)+'</small></td>';
+      h+='<td><button class="apagar" data-id="'+r.id+'">apagar</button></td></tr>';});
+    h+='</tbody></table>';t.innerHTML=h;
+    t.querySelectorAll('.apagar').forEach(function(b){b.addEventListener('click',async function(){if(!confirm('Apagar este registro? Não tem volta.'))return;var r=await db.from(aba).delete().eq('id',b.getAttribute('data-id'));if(r.error){alert('Não apagou: '+r.error.message);return;}carregar();});});}
+
+  $('exportar').addEventListener('click',function(){var lista=filtrados();if(!lista.length)return;var cols=Object.keys(lista[0]);
+    var csv='﻿'+cols.join(';')+'\n'+lista.map(function(r){return cols.map(function(c){var v=r[c]==null?'':String(r[c]);return '"'+v.replace(/"/g,'""')+'"'}).join(';')}).join('\n');
+    var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download=aba+'-reset-'+new Date().toISOString().slice(0,10)+'.csv';a.click();});
+
+  /* chegou pelo link de convite ou de recuperação: define a senha antes de usar o painel */
+  var chegouPorLink=/type=(invite|recovery|magiclink)/.test(location.hash);
+  function definirSenha(){var nova=prompt('Defina a sua senha do painel (mínimo 8 caracteres):');if(!nova)return;if(nova.length<8){alert('Senha curta demais. Use pelo menos 8 caracteres.');return definirSenha();}
+    db.auth.updateUser({password:nova}).then(function(r){if(r.error){alert('Não deu pra salvar a senha: '+r.error.message);}else{alert('Senha salva. Guarde em lugar seguro.');history.replaceState(null,'',location.pathname);}});}
+  db.auth.onAuthStateChange(function(ev,s){if(ev==='PASSWORD_RECOVERY'||(ev==='SIGNED_IN'&&chegouPorLink)){chegouPorLink=false;usuario=s?s.user:usuario;mostra();if(usuario)carregar();setTimeout(definirSenha,300);}});
+  sessao();
+})();
+</script>
+</body>
+</html>
