@@ -4,12 +4,11 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="../favicon.png" type="image/png">
-<link rel="icon" href="../img/cau-reset-badge.webp" type="image/webp">
-<link rel="apple-touch-icon" href="../favicon.png">
 <title>Banco de Oportunidades do CAU/SP: por que o Conselho precisa ajudar o arquiteto a encontrar trabalho | Chapa 2 R.E.S.E.T.</title>
 <meta name="description" content="A proposta 1 da Chapa 2 R.E.S.E.T. cria um Banco de Oportunidades no CAU/SP: vagas, estágios, concursos e credenciamentos num só lugar. O que é, por que importa e como funciona.">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../favicon.png">
 <link rel="stylesheet" href="../estilo.css">
 <link rel="stylesheet" href="../artigo.css">
 </head>
@@ -17,7 +16,8 @@
 <div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div>
 <header class="topo"><div class="wrap">
   <a class="marca" href="../index.html"><img class="logo" src="../img/cau-reset-badge.webp" alt="Chapa 2 R.E.S.E.T"><span>R.E.S.E.T.<small>Eleições CAU/SP 2026</small></span></a>
-  <nav><a href="../index.html">Início</a><a href="../propostas.html">Propostas</a><a href="../candidatos.html">Candidatos</a><a href="../artigos.html" class="ativo">Artigos</a><a href="../ideias.html">Envie sua ideia</a><a href="../cadastro.html" class="cta">Quero apoiar</a></nav>
+  <a class="cta-mob" href="../cadastro.html">Quero apoiar</a><button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-topo" onclick="var t=this.closest('.topo'),a=t.classList.toggle('aberto');this.setAttribute('aria-expanded',a);this.setAttribute('aria-label',a?'Fechar menu':'Abrir menu')"><span></span></button>
+  <nav id="menu-topo"><a href="../index.html">Início</a><a href="../propostas.html">Propostas</a><a href="../candidatos.html">Candidatos</a><a href="../artigos.html" class="ativo">Artigos</a><a href="../apoie.html">Compartilhe</a><a href="../ideias.html">Envie sua ideia</a><a href="../cadastro.html" class="cta">Quero apoiar</a></nav>
 </div></header>
 <section class="art-cabeca"><div class="wrap">
   <span class="kicker">Trabalho e oportunidades · Proposta 1</span>
@@ -29,7 +29,6 @@
   
   <div class="resumo"><b>Em resumo</b><p>A Chapa 2 R.E.S.E.T. propõe criar o Banco de Oportunidades Profissionais do CAU/SP: um lugar único, mantido pelo Conselho, com vagas de trabalho, estágios, concursos públicos e credenciamentos abertos a arquitetos e urbanistas. É a proposta número 1 do caderno e a primeira das dez bandeiras da chapa.</p></div>
   <div class="art-capa"><span>Imagem deitada 16:9<br><small>foto real da categoria ou arte da campanha, nunca logo de empresa</small></span></div>
-  
   <h2>O que a proposta diz?</h2>
   <p>Criar o Banco de Oportunidades Profissionais do CAU/SP. Um só endereço, mantido pelo Conselho, onde ficam reunidos: vagas de emprego que exigem registro no CAU, estágios, concursos públicos com cargo de arquiteto e urbanista, chamadas de credenciamento de prefeituras e órgãos públicos, e oportunidades de parceria entre profissionais.</p>
   <p>Ela vem acompanhada de duas outras propostas do caderno: a 79, que reserva uma área do banco para autônomos e pequenos escritórios, e a 41, que dá visibilidade dentro do banco a grupos historicamente pouco representados, com critérios públicos.</p>
@@ -74,7 +73,6 @@
   <div class="legal">Esta é uma página da campanha eleitoral da Chapa 2 R.E.S.E.T. às Eleições CAU/SP 2026. Não constitui comunicação institucional do CAU/SP nem do CAU/BR. <a href="../privacidade.html" style="display:inline">Política de privacidade e LGPD</a>.</div>
 </div></footer>
 <script>
-// contagem regressiva pro dia da votacao (5/11/2026)
 (function(){var el=document.getElementById('pv-timer');if(!el)return;function atualiza(){var hoje=new Date();hoje.setHours(0,0,0,0);var dia=new Date(2026,10,5);var d=Math.round((dia-hoje)/86400000);if(d>1)el.innerHTML='Faltam <b>'+d+'</b> dias';else if(d===1)el.innerHTML='Falta <b>1</b> dia';else if(d===0)el.innerHTML='<b>É hoje!</b> Vote pelo SiEN';else el.innerHTML='Votação encerrada';}atualiza();setInterval(atualiza,60*60*1000);})();
 </script>
 </body>

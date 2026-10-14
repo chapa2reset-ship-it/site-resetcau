@@ -111,7 +111,8 @@
 <div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div>
 <header class="topo"><div class="wrap">
   <a class="marca" href="index.html"><img class="logo" src="img/cau-reset-badge.webp" alt="Chapa 2 R.E.S.E.T"><span>R.E.S.E.T.<small>Eleições CAU/SP 2026</small></span></a>
-  <nav><a href="index.html">Início</a><a href="propostas.html" class="ativo">Propostas</a><a href="candidatos.html">Candidatos</a><a href="artigos.html">Artigos</a><a href="apoie.html">Compartilhe</a><a href="ideias.html">Envie sua ideia</a><a href="cadastro.html" class="cta">Quero apoiar</a></nav>
+  <a class="cta-mob" href="cadastro.html">Quero apoiar</a><button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-topo" onclick="var t=this.closest('.topo'),a=t.classList.toggle('aberto');this.setAttribute('aria-expanded',a);this.setAttribute('aria-label',a?'Fechar menu':'Abrir menu')"><span></span></button>
+  <nav id="menu-topo"><a href="index.html">Início</a><a href="propostas.html" class="ativo">Propostas</a><a href="candidatos.html">Candidatos</a><a href="artigos.html">Artigos</a><a href="apoie.html">Compartilhe</a><a href="ideias.html">Envie sua ideia</a><a href="cadastro.html" class="cta">Quero apoiar</a></nav>
 </div></header>
 
 <section class="roxa" style="padding:48px 0 40px">
@@ -352,7 +353,7 @@
     document.querySelectorAll('.parte').forEach(function(pt){var prox=pt.nextElementSibling,tem=false;while(prox&&!prox.classList.contains('parte')){if(prox.classList.contains('bloco')&&!prox.classList.contains('fora'))tem=true;prox=prox.nextElementSibling;}pt.style.display=tem?'':'none';});
     qn.textContent=n+' proposta'+(n===1?'':'s');}
   q.addEventListener('input',aplica);
-  var chips=document.querySelectorAll('#f-cat span');chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.classList.remove('on')});c.classList.add('on');cat=c.getAttribute('data-v');aplica();var cad=document.getElementById('todas');if(cad&&cad.getBoundingClientRect().top<0)cad.scrollIntoView({behavior:'smooth',block:'start'});});});
+  var chips=document.querySelectorAll('#f-cat span');chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.classList.remove('on')});c.classList.add('on');cat=c.getAttribute('data-v');aplica();var cad=document.getElementById('todas');if(cad&&(cad.getBoundingClientRect().top<0||cad.getBoundingClientRect().top>innerHeight*.6))cad.scrollIntoView({behavior:'smooth',block:'start'});});});
   // filtros só aparecem no painel quando o caderno chega na tela
   var painel=document.getElementById('painel-prop'),cad=document.getElementById('todas');
   if(painel&&cad){var ag=false;function checa(){ag=false;painel.classList.toggle('com-filtros',cad.getBoundingClientRect().top<=110);}window.addEventListener('scroll',function(){if(!ag){ag=true;requestAnimationFrame(checa);}},{passive:true});window.addEventListener('resize',checa);checa();}
