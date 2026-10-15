@@ -169,7 +169,7 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
   .topo nav{display:none;order:9;width:100%;margin:0;flex-direction:column;gap:2px;padding:6px 0 8px;border-top:1px solid rgba(255,255,255,.1)}
   .topo.aberto nav{display:flex}
   .topo nav a{display:flex;align-items:center;min-height:44px;font-size:15px;padding:10px 12px}
-  .topo nav a.cta{display:none}
+  .topo nav a.cta{margin-top:6px;justify-content:center;font-weight:700}
 
   /* seções e grades */
   section{padding:40px 0}
