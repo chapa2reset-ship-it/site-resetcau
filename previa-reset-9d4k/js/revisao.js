@@ -132,6 +132,17 @@
     }
     abrir(nomePagina() + " · " + (TIPOS[el.tagName.toLowerCase()] || "trecho"), h);
     document.getElementById("rev-cancelar").onclick = fechar;
+    /* rascunho: o que a pessoa digita fica guardado no navegador até salvar, pra não perder se fechar a página */
+    var chaveRasc = "reset-rascunho:" + pagina + ":" + k, txtEl = document.getElementById("rev-txt"), comEl = document.getElementById("rev-com");
+    try {
+      var rasc = JSON.parse(localStorage.getItem(chaveRasc) || "null");
+      if (rasc && (rasc.t !== orig || rasc.c)) {
+        txtEl.value = rasc.t; comEl.value = rasc.c || "";
+        var m0 = document.getElementById("rev-msg"); m0.className = "msg ok"; m0.textContent = "Rascunho recuperado: continue de onde parou e clique em Salvar.";
+      }
+    } catch (e) {}
+    function guardaRasc() { try { localStorage.setItem(chaveRasc, JSON.stringify({ t: txtEl.value, c: comEl.value })); } catch (e) {} }
+    txtEl.addEventListener("input", guardaRasc); comEl.addEventListener("input", guardaRasc);
     document.getElementById("rev-salvar").onclick = async function () {
       var m = document.getElementById("rev-msg"), novo = document.getElementById("rev-txt").value.trim(), com = document.getElementById("rev-com").value.trim();
       if (novo === orig && !com) { m.className = "msg erro"; m.textContent = "Você não mudou nada. Reescreva o texto ou deixe um comentário."; return; }
@@ -141,6 +152,7 @@
       this.disabled = false;
       if (r.error) { m.className = "msg erro"; m.textContent = /row-level|permission/i.test(r.error.message) ? "Seu e-mail ainda não está liberado na equipe de revisão. Fale com o Mendes." : "Não deu pra salvar agora: " + r.error.message; return; }
       m.className = "msg ok"; m.textContent = "Sugestão salva. Obrigado!";
+      try { localStorage.removeItem(chaveRasc); } catch (e) {}
       await carregar(); setTimeout(fechar, 900);
     };
     setTimeout(function () { var t = document.getElementById("rev-txt"); if (t) t.focus(); }, 50);
