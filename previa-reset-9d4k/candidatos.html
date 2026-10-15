@@ -10,7 +10,7 @@
 <title>Os 190 candidatos | Chapa 2 R.E.S.E.T.</title>
 <meta name="description" content="Quem são os 190 candidatos da Chapa 2 R.E.S.E.T. ao CAU/SP: dupla federal e 94 duplas estaduais, com foto, registro e currículo, por região e por área de atuação.">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=24844913">
+<link rel="stylesheet" href="estilo.css?v=30340613">
 <style>
 .dupla-card{padding:0;overflow:hidden;margin-bottom:14px}
 .dupla-cab{display:flex;align-items:center;gap:12px;padding:10px 18px;background:var(--roxo2);color:#fff;font-size:13px}
@@ -2041,5 +2041,6 @@
   curs.forEach(function(d){d.addEventListener('toggle',function(){if(!d.open)return;curs.forEach(function(o){if(o!==d&&o.open)o.open=false;});var card=d.closest('.dupla-card')||d.closest('.pes');if(!card)return;var cab=document.querySelector('.topo');var h=(cab?cab.offsetHeight:72)+12;if(card.getBoundingClientRect().top<h){card.scrollIntoView({behavior:'smooth',block:'start'});}});});
 })();
 </script>
+<script src="js/revisao.js?v=30340613" defer></script>
 </body>
 </html>

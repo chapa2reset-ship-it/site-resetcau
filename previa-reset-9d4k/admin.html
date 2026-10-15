@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="favicon.png">
 <title>Painel | Chapa 2 R.E.S.E.T.</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=24844913">
+<link rel="stylesheet" href="estilo.css?v=30340613">
 <style>
 body{background:var(--off)}
 .adm-wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
@@ -30,6 +30,9 @@ table{width:100%;border-collapse:collapse;font-size:13.5px}
 th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #f0ecf6;vertical-align:top}
 th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--cinza);background:#faf8fd;position:sticky;top:0}
 td.txt{max-width:420px;white-space:pre-wrap}
+td.txt.novo{background:#fffbe6}
+td select.st{font:inherit;font-size:12.5px;padding:5px 8px;border:1px solid #cfc6e0;border-radius:6px;background:#fff}
+td a.ver{font-size:12px;font-weight:700;color:var(--roxo)}
 td .zap{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:#25d366;border-radius:6px;padding:5px 9px;text-decoration:none;white-space:nowrap}
 td .zap:hover{background:#1da851}
 td .semzap{font-size:11px;color:var(--cinza)}
@@ -68,6 +71,7 @@ button.btn{font:inherit;cursor:pointer}
     <div class="adm-abas">
       <button class="on" data-aba="apoiadores">Apoiadores <b id="n-apo">0</b></button>
       <button data-aba="ideias">Ideias <b id="n-ide">0</b></button>
+      <button data-aba="sugestoes">Revisão de textos <b id="n-sug">0</b></button>
     </div>
     <div class="adm-barra">
       <input id="busca" type="search" placeholder="Buscar por nome, cidade, e-mail, texto...">
@@ -82,10 +86,10 @@ button.btn{font:inherit;cursor:pointer}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
-<script src="js/reset-db.js?v=24844913"></script>
+<script src="js/reset-db.js?v=30340613"></script>
 <script>
 (function(){
-  var db=ResetDb.cliente(), aba='apoiadores', dados={apoiadores:[],ideias:[]}, usuario=null;
+  var db=ResetDb.cliente(), aba='apoiadores', dados={apoiadores:[],ideias:[],sugestoes:[]}, usuario=null;
   var $=function(id){return document.getElementById(id)};
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function zap(tel,nome,tipo){var d=String(tel||'').replace(/\D/g,'');if(!d)return '';if(d.length<=11)d='55'+d;var n=(nome||'').trim().split(' ')[0];var msg=tipo==='ideia'?'Olá'+(n?', '+n:'')+'! Aqui é da Chapa 2 R.E.S.E.T. Recebemos a sua ideia no site e queremos entender melhor. Pode falar agora?':'Olá'+(n?', '+n:'')+'! Aqui é da Chapa 2 R.E.S.E.T. Obrigado por entrar na nossa base. Dia 5 de novembro a votação é 100% online. Posso te mandar as propostas por aqui?';return 'https://wa.me/'+d+'?text='+encodeURIComponent(msg);}
@@ -109,7 +113,9 @@ button.btn{font:inherit;cursor:pointer}
     var a=await db.from('apoiadores').select('*').order('criado_em',{ascending:false}).limit(5000);
     var i=await db.from('ideias').select('*').order('criado_em',{ascending:false}).limit(5000);
     if(a.error||i.error){e.textContent='Erro ao ler o banco: '+((a.error||i.error).message);e.hidden=false;$('info').textContent='';return;}
-    dados.apoiadores=a.data||[];dados.ideias=i.data||[];$('n-apo').textContent=dados.apoiadores.length;$('n-ide').textContent=dados.ideias.length;render();}
+    dados.apoiadores=a.data||[];dados.ideias=i.data||[];$('n-apo').textContent=dados.apoiadores.length;$('n-ide').textContent=dados.ideias.length;
+    var g=await db.from('sugestoes').select('*').order('criado_em',{ascending:false}).limit(5000);dados.sugestoes=g.error?[]:(g.data||[]);
+    $('n-sug').textContent=dados.sugestoes.filter(function(x){return x.status==='pendente'}).length;render();}
 
   function filtrados(){var q=$('busca').value.trim().toLowerCase();var lista=dados[aba];if(!q)return lista;return lista.filter(function(r){return JSON.stringify(r).toLowerCase().indexOf(q)>=0});}
 
@@ -117,13 +123,17 @@ button.btn{font:inherit;cursor:pointer}
     if(!lista.length){t.innerHTML='<div class="vazio">Nada por aqui ainda.</div>';return;}
     var h='<table><thead><tr>';
     if(aba==='apoiadores')h+='<th>Quando</th><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Cidade</th><th>Atuação</th><th>Registro</th><th>Volunt.</th><th>Contato</th><th>Origem</th><th></th>';
+    else if(aba==='sugestoes')h+='<th>Quando</th><th>Quem</th><th>Página</th><th>Como está</th><th>Sugestão</th><th>Comentário</th><th>Situação</th>';
     else h+='<th>Quando</th><th>Tema</th><th>Ideia ou problema</th><th>Cidade</th><th>Nome</th><th>E-mail</th><th>Telefone</th><th>Contato</th><th>Origem</th><th></th>';
     h+='</tr></thead><tbody>';
     lista.forEach(function(r){h+='<tr>';
       if(aba==='apoiadores')h+='<td>'+dt(r.criado_em)+'</td><td><b>'+esc(r.nome)+'</b></td><td>'+esc(r.email)+'</td><td>'+esc(r.whatsapp)+'</td><td>'+esc(r.cidade)+'</td><td>'+esc(r.atuacao)+'</td><td>'+esc(r.registro_cau)+'</td><td>'+(r.voluntario?'<span class="tag sim">sim</span>':'<span class="tag">não</span>')+'</td><td>'+btZap(r.whatsapp,r.nome,'apoio')+'</td><td><small>'+esc(r.origem)+'</small></td>';
+      else if(aba==='sugestoes'){var st=['pendente','aprovado','recusado','aplicado'].map(function(o){return '<option'+(o===r.status?' selected':'')+'>'+o+'</option>'}).join('');
+        h+='<td>'+dt(r.criado_em)+'</td><td>'+esc(r.autor_email)+'</td><td><a class="ver" href="'+esc(r.pagina)+'?revisar" target="_blank" rel="noopener">'+esc(r.pagina)+'</a><br><small>'+esc(r.tipo)+'</small></td><td class="txt">'+esc(r.original)+'</td><td class="txt novo">'+(r.sugerido===r.original?'<small>(sem mudança no texto)</small>':esc(r.sugerido))+'</td><td class="txt">'+esc(r.comentario)+'</td><td><select class="st" data-id="'+r.id+'">'+st+'</select></td>';}
       else h+='<td>'+dt(r.criado_em)+'</td><td><span class="tag">'+esc(r.tema)+'</span></td><td class="txt">'+esc(r.texto)+'</td><td>'+esc(r.cidade)+'</td><td>'+esc(r.nome)+'</td><td>'+esc(r.email)+'</td><td>'+esc(r.telefone)+'</td><td>'+btZap(r.telefone,r.nome,'ideia')+'</td><td><small>'+esc(r.origem)+'</small></td>';
       h+='<td><button class="apagar" data-id="'+r.id+'">apagar</button></td></tr>';});
     h+='</tbody></table>';t.innerHTML=h;
+    t.querySelectorAll('select.st').forEach(function(sel){sel.addEventListener('change',async function(){var r=await db.from('sugestoes').update({status:sel.value,atualizado_em:new Date().toISOString()}).eq('id',sel.getAttribute('data-id'));if(r.error){alert('Não salvou: '+r.error.message);}carregar();});});
     t.querySelectorAll('.apagar').forEach(function(b){b.addEventListener('click',async function(){if(!confirm('Apagar este registro? Não tem volta.'))return;var r=await db.from(aba).delete().eq('id',b.getAttribute('data-id'));if(r.error){alert('Não apagou: '+r.error.message);return;}carregar();});});}
 
   $('exportar').addEventListener('click',function(){var lista=filtrados();if(!lista.length)return;var cols=Object.keys(lista[0]);
