@@ -9,13 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="../favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../favicon.png">
-<link rel="stylesheet" href="../estilo.css?v=09513499">
-<link rel="stylesheet" href="../artigo.css?v=09513499">
+<link rel="stylesheet" href="../estilo.css?v=11700167">
+<link rel="stylesheet" href="../artigo.css?v=11700167">
 </head>
 <body>
-<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div><script src="../js/faixa.js?v=09513499"></script>
+<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div><script src="../js/faixa.js?v=11700167"></script>
 <header class="topo"><div class="wrap">
-  <a class="marca" href="../index.html"><img class="logo" src="../img/cau-reset-badge.webp" alt="Chapa 2 RESET"><span>RESET<small>Eleições CAU/SP 2026</small></span></a>
+  <a class="marca" href="../index.html"><img class="logo" src="../img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET"><span>RESET<small>Eleições CAU/SP 2026</small></span></a>
   <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-topo" onclick="var t=this.closest('.topo'),a=t.classList.toggle('aberto');this.setAttribute('aria-expanded',a);this.setAttribute('aria-label',a?'Fechar menu':'Abrir menu')"><span></span></button>
   <nav id="menu-topo"><a href="../index.html">Início</a><a href="../propostas.html">Propostas</a><a href="../candidatos.html">Candidatos</a><a href="../artigos.html" class="ativo">Artigos</a><a href="../apoie.html">Compartilhe</a><a href="../ideias.html">Envie sua ideia</a><a href="../cadastro.html" class="cta">Quero apoiar</a></nav>
 </div></header>
@@ -51,13 +51,13 @@
   <div class="faq"><details><summary>O CAU pode punir discriminação?</summary><p>Pode, quando a conduta for de arquiteto e urbanista registrado e configurar infração ao Código de Ética do CAU/BR: o julgamento em primeira instância é do CAU/SP (art. 34, IX). Fora disso, o caminho é encaminhar a quem tem competência.</p></details><details><summary>Isso cria regra nova de ética?</summary><p>Não. O Código de Ética é do CAU/BR. A política organiza a casa e aplica o código existente; lacunas são levadas como proposta ao CAU/BR.</p></details><details><summary>Vale para os empregados do CAU/SP?</summary><p>Vale. A política cobre conselheiros, empregados, colaboradores e eventos do Conselho, com sigilo e proteção contra retaliação.</p></details><details><summary>Quando fica pronta?</summary><p>A meta é aprovar a política no Plenário no primeiro ano de gestão, que começa em 2027.</p></details></div>
   <h2>Fontes</h2>
   <ul class="fontes"><li>Caderno de propostas da Chapa 2 RESET (2026), proposta 37 e propostas 36, 38, 39, 102, 111 e 113.</li><li>Lei 12.378/2010, art. 24, §1º, art. 28, II, e art. 34, incisos I, IX, X, XI e XIV.</li><li>Código de Ética e Disciplina do CAU/BR (Res. CAU/BR 52/2013).</li><li>Plataforma "CAU pra Toda Obra" (2023), proposta 32, cópia da Wayback Machine de 26/04/2024.</li><li>Plataforma de trabalho da chapa da situação (Chapa 1, 2026), propostas 9 e 11.</li></ul>
-  <div class="assina"><img src="../img/cau-reset-badge.webp" alt="Chapa 2 RESET"><div><b>Chapa 2 RESET</b><small>Reconstrução, Escuta, Suporte, Equidade, Transparência. Eleições CAU/SP 2026. Responsável: Eder Roberto da Silva. Dúvidas: juridicochapareset@gmail.com</small></div></div>
+  <div class="assina"><img src="../img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET"><div><b>Chapa 2 RESET</b><small>Reconstrução, Escuta, Suporte, Equidade, Transparência. Eleições CAU/SP 2026. Responsável: Eder Roberto da Silva. Dúvidas: juridicochapareset@gmail.com</small></div></div>
   <div class="relac"><h3>Mais sobre Inclusão</h3><ul><li><a href="p036.html">Metas e protocolos de acessibilidade: física, digital, comunicacional e atitudinal</a> (proposta 36)</li><li><a href="p038.html">Canais seguros de acolhimento para relatos de discriminação</a> (proposta 38)</li><li><a href="p039.html">Pluralidade nos espaços de representação: regiões, gerações, raça, orientação sexual, pessoas com deficiência, neurodivergentes</a> (proposta 39)</li></ul></div>
   <p><a class="btn roxo" href="../propostas.html#p37">Ver a proposta 37 no caderno</a> &nbsp; <a class="btn amarelo" href="../cadastro.html">Quero apoiar a Chapa 2</a></p>
 </div>
 <aside class="painel-voto" id="painel-art" aria-label="Chamada para votar na Chapa 2">
   <div class="pv-topo">
-    <img class="pv-logo" src="../img/cau-reset-badge.webp" alt="Chapa 2 RESET">
+    <img class="pv-logo" src="../img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET">
     <div class="pv-data">
       <span class="pv-selo">5 de novembro</span>
       <span class="pv-timer" id="pv-timer" aria-live="polite">Faltam <b>…</b> dias</span>
@@ -77,6 +77,6 @@
 <script>
 (function(){var el=document.getElementById('pv-timer');if(!el)return;function atualiza(){var hoje=new Date();hoje.setHours(0,0,0,0);var dia=new Date(2026,10,5);var d=Math.round((dia-hoje)/86400000);if(d>1)el.innerHTML='Faltam <b>'+d+'</b> dias';else if(d===1)el.innerHTML='Falta <b>1</b> dia';else if(d===0)el.innerHTML='<b>É hoje!</b> Vote pelo SiEN';else el.innerHTML='Votação encerrada';}atualiza();setInterval(atualiza,60*60*1000);})();
 </script>
-<script src="../js/revisao.js?v=09513499" defer></script>
+<script src="../js/revisao.js?v=11700167" defer></script>
 </body>
 </html>

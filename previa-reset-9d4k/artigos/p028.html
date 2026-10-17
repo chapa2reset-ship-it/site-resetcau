@@ -9,13 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="../favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../favicon.png">
-<link rel="stylesheet" href="../estilo.css?v=09513499">
-<link rel="stylesheet" href="../artigo.css?v=09513499">
+<link rel="stylesheet" href="../estilo.css?v=11700167">
+<link rel="stylesheet" href="../artigo.css?v=11700167">
 </head>
 <body>
-<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div><script src="../js/faixa.js?v=09513499"></script>
+<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div><script src="../js/faixa.js?v=11700167"></script>
 <header class="topo"><div class="wrap">
-  <a class="marca" href="../index.html"><img class="logo" src="../img/cau-reset-badge.webp" alt="Chapa 2 RESET"><span>RESET<small>Eleições CAU/SP 2026</small></span></a>
+  <a class="marca" href="../index.html"><img class="logo" src="../img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET"><span>RESET<small>Eleições CAU/SP 2026</small></span></a>
   <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-topo" onclick="var t=this.closest('.topo'),a=t.classList.toggle('aberto');this.setAttribute('aria-expanded',a);this.setAttribute('aria-label',a?'Fechar menu':'Abrir menu')"><span></span></button>
   <nav id="menu-topo"><a href="../index.html">Início</a><a href="../propostas.html">Propostas</a><a href="../candidatos.html">Candidatos</a><a href="../artigos.html" class="ativo">Artigos</a><a href="../apoie.html">Compartilhe</a><a href="../ideias.html">Envie sua ideia</a><a href="../cadastro.html" class="cta">Quero apoiar</a></nav>
 </div></header>
@@ -49,13 +49,13 @@
   <div class="faq"><details><summary>O Plenário não decide hoje?</summary><p>Decide, e os placares citados mostram isso. A proposta trata do como: documentos antes, voto nominal depois e comissões proporcionais, por regra escrita no regimento.</p></details><details><summary>Quem elege o presidente do CAU/SP?</summary><p>Os conselheiros, entre eles, na primeira plenária. Por isso o Plenário é a instância que importa: é ele que escolhe e pode cobrar a presidência.</p></details><details><summary>Pedido de vista é obstrução?</summary><p>Não. É o instrumento que o conselheiro tem para estudar um assunto antes de votar. A proposta garante tempo e documentos para que a vista seja exceção e não necessidade.</p></details><details><summary>E se a Chapa 2 não tiver maioria?</summary><p>A regra vale do mesmo jeito. Pauta pública, voto nominal e proporção nas comissões são compromissos com o método, não com um resultado.</p></details></div>
   <h2>Fontes</h2>
   <ul class="fontes"><li>Caderno de propostas da Chapa 2 RESET (2026), proposta 28 e propostas 24, 26, 27 e 29.</li><li>Lei 12.378/2010, art. 32 (composição dos CAU/UF) e art. 34, incisos I, IV e X.</li><li>Regulamento Eleitoral do CAU (Res. CAU/BR 179/2019): representação proporcional das chapas concorrentes nos plenários dos CAU/UF.</li><li>Resultado das eleições de 2023 no CAU/SP (CEN-CAU/BR, 18/10/2023): três chapas eleitas, com 29, 24 e 24 vagas.</li><li>Deliberações plenárias do CAU/SP (Portal da Transparência): compra da Casa de Ribeirão Preto (27/02/2025, 37 a 31), orçamento 2025 (35 a 22) e DPOSP 0948-03/2026 (Plano Estadual de Fiscalização, 57 a 0).</li></ul>
-  <div class="assina"><img src="../img/cau-reset-badge.webp" alt="Chapa 2 RESET"><div><b>Chapa 2 RESET</b><small>Reconstrução, Escuta, Suporte, Equidade, Transparência. Eleições CAU/SP 2026. Responsável: Eder Roberto da Silva. Dúvidas: juridicochapareset@gmail.com</small></div></div>
+  <div class="assina"><img src="../img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET"><div><b>Chapa 2 RESET</b><small>Reconstrução, Escuta, Suporte, Equidade, Transparência. Eleições CAU/SP 2026. Responsável: Eder Roberto da Silva. Dúvidas: juridicochapareset@gmail.com</small></div></div>
   <div class="relac"><h3>Mais sobre Transparência</h3><ul><li><a href="p024.html">Cumprir a Lei 12.378/2010</a> (proposta 24)</li><li><a href="p025.html">Combater favorecimento, personalismo e uso político do Conselho</a> (proposta 25)</li><li><a href="p026.html">Política de integridade</a> (proposta 26)</li></ul></div>
   <p><a class="btn roxo" href="../propostas.html#p28">Ver a proposta 28 no caderno</a> &nbsp; <a class="btn amarelo" href="../cadastro.html">Quero apoiar a Chapa 2</a></p>
 </div>
 <aside class="painel-voto" id="painel-art" aria-label="Chamada para votar na Chapa 2">
   <div class="pv-topo">
-    <img class="pv-logo" src="../img/cau-reset-badge.webp" alt="Chapa 2 RESET">
+    <img class="pv-logo" src="../img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET">
     <div class="pv-data">
       <span class="pv-selo">5 de novembro</span>
       <span class="pv-timer" id="pv-timer" aria-live="polite">Faltam <b>…</b> dias</span>
@@ -75,6 +75,6 @@
 <script>
 (function(){var el=document.getElementById('pv-timer');if(!el)return;function atualiza(){var hoje=new Date();hoje.setHours(0,0,0,0);var dia=new Date(2026,10,5);var d=Math.round((dia-hoje)/86400000);if(d>1)el.innerHTML='Faltam <b>'+d+'</b> dias';else if(d===1)el.innerHTML='Falta <b>1</b> dia';else if(d===0)el.innerHTML='<b>É hoje!</b> Vote pelo SiEN';else el.innerHTML='Votação encerrada';}atualiza();setInterval(atualiza,60*60*1000);})();
 </script>
-<script src="../js/revisao.js?v=09513499" defer></script>
+<script src="../js/revisao.js?v=11700167" defer></script>
 </body>
 </html>

@@ -9,13 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="../favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../favicon.png">
-<link rel="stylesheet" href="../estilo.css?v=09513499">
-<link rel="stylesheet" href="../artigo.css?v=09513499">
+<link rel="stylesheet" href="../estilo.css?v=11700167">
+<link rel="stylesheet" href="../artigo.css?v=11700167">
 </head>
 <body>
-<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div><script src="../js/faixa.js?v=09513499"></script>
+<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div><script src="../js/faixa.js?v=11700167"></script>
 <header class="topo"><div class="wrap">
-  <a class="marca" href="../index.html"><img class="logo" src="../img/cau-reset-badge.webp" alt="Chapa 2 RESET"><span>RESET<small>Eleições CAU/SP 2026</small></span></a>
+  <a class="marca" href="../index.html"><img class="logo" src="../img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET"><span>RESET<small>Eleições CAU/SP 2026</small></span></a>
   <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-topo" onclick="var t=this.closest('.topo'),a=t.classList.toggle('aberto');this.setAttribute('aria-expanded',a);this.setAttribute('aria-label',a?'Fechar menu':'Abrir menu')"><span></span></button>
   <nav id="menu-topo"><a href="../index.html">Início</a><a href="../propostas.html">Propostas</a><a href="../candidatos.html">Candidatos</a><a href="../artigos.html" class="ativo">Artigos</a><a href="../apoie.html">Compartilhe</a><a href="../ideias.html">Envie sua ideia</a><a href="../cadastro.html" class="cta">Quero apoiar</a></nav>
 </div></header>
@@ -52,13 +52,13 @@
   <div class="faq"><details><summary>O CAU/SP pode criar um fórum desses?</summary><p>Pode. O art. 34, IV, da Lei 12.378/2010 permite ao CAU/SP criar colegiados com finalidades específicas, e o inciso XIII manda manter relatórios públicos. É decisão do Plenário, com recursos próprios.</p></details><details><summary>O fórum vai decidir alguma coisa?</summary><p>Não decide pelo Conselho. Ele forma pauta, produz subsídio e recebe resposta registrada. As decisões continuam com as comissões e o Plenário, como manda a lei.</p></details><details><summary>Quem trabalha em empresa pública ou de economia mista entra?</summary><p>Sim. A proposta inclui prefeituras, governo do estado, autarquias, empresas públicas e sociedades de economia mista. O critério é o vínculo público, não o tipo de órgão.</p></details></div>
   <h2>Fontes</h2>
   <ul class="fontes"><li>Caderno de propostas da Chapa 2 RESET (2026), propostas 90, 29, 30, 42, 87, 89 e 92.</li><li>Lei 12.378/2010, art. 24, §1º, e art. 34, I, IV e XIII.</li><li>CAU/SP, notícias sobre o ciclo de pré-conferências (fevereiro a maio de 2026) e a 3ª Conferência Estadual (07 e 08/08/2026), causp.gov.br.</li><li>Plataforma da chapa da situação, 2026 (eixo 5, proposta 50).</li></ul>
-  <div class="assina"><img src="../img/cau-reset-badge.webp" alt="Chapa 2 RESET"><div><b>Chapa 2 RESET</b><small>Reconstrução, Escuta, Suporte, Equidade, Transparência. Eleições CAU/SP 2026. Responsável: Eder Roberto da Silva. Dúvidas: juridicochapareset@gmail.com</small></div></div>
+  <div class="assina"><img src="../img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET"><div><b>Chapa 2 RESET</b><small>Reconstrução, Escuta, Suporte, Equidade, Transparência. Eleições CAU/SP 2026. Responsável: Eder Roberto da Silva. Dúvidas: juridicochapareset@gmail.com</small></div></div>
   <div class="relac"><h3>Mais sobre Serviço público</h3><ul><li><a href="p086.html">Mais arquitetos nos órgãos públicos, com concursos, carreira e remuneração compatíveis</a> (proposta 86)</li><li><a href="p087.html">Representantes do CAU/SP em câmaras, comissões e conselhos de políticas públicas</a> (proposta 87)</li><li><a href="p088.html">Valorização da carreira pública e piso salarial da Lei 4.950-A/1966</a> (proposta 88)</li></ul></div>
   <p><a class="btn roxo" href="../propostas.html#p90">Ver a proposta 90 no caderno</a> &nbsp; <a class="btn amarelo" href="../cadastro.html">Quero apoiar a Chapa 2</a></p>
 </div>
 <aside class="painel-voto" id="painel-art" aria-label="Chamada para votar na Chapa 2">
   <div class="pv-topo">
-    <img class="pv-logo" src="../img/cau-reset-badge.webp" alt="Chapa 2 RESET">
+    <img class="pv-logo" src="../img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET">
     <div class="pv-data">
       <span class="pv-selo">5 de novembro</span>
       <span class="pv-timer" id="pv-timer" aria-live="polite">Faltam <b>…</b> dias</span>
@@ -78,6 +78,6 @@
 <script>
 (function(){var el=document.getElementById('pv-timer');if(!el)return;function atualiza(){var hoje=new Date();hoje.setHours(0,0,0,0);var dia=new Date(2026,10,5);var d=Math.round((dia-hoje)/86400000);if(d>1)el.innerHTML='Faltam <b>'+d+'</b> dias';else if(d===1)el.innerHTML='Falta <b>1</b> dia';else if(d===0)el.innerHTML='<b>É hoje!</b> Vote pelo SiEN';else el.innerHTML='Votação encerrada';}atualiza();setInterval(atualiza,60*60*1000);})();
 </script>
-<script src="../js/revisao.js?v=09513499" defer></script>
+<script src="../js/revisao.js?v=11700167" defer></script>
 </body>
 </html>

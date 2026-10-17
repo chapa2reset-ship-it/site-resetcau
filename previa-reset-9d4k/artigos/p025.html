@@ -9,13 +9,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="../favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../favicon.png">
-<link rel="stylesheet" href="../estilo.css?v=09513499">
-<link rel="stylesheet" href="../artigo.css?v=09513499">
+<link rel="stylesheet" href="../estilo.css?v=11700167">
+<link rel="stylesheet" href="../artigo.css?v=11700167">
 </head>
 <body>
-<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div><script src="../js/faixa.js?v=09513499"></script>
+<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div><script src="../js/faixa.js?v=11700167"></script>
 <header class="topo"><div class="wrap">
-  <a class="marca" href="../index.html"><img class="logo" src="../img/cau-reset-badge.webp" alt="Chapa 2 RESET"><span>RESET<small>Eleições CAU/SP 2026</small></span></a>
+  <a class="marca" href="../index.html"><img class="logo" src="../img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET"><span>RESET<small>Eleições CAU/SP 2026</small></span></a>
   <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-topo" onclick="var t=this.closest('.topo'),a=t.classList.toggle('aberto');this.setAttribute('aria-expanded',a);this.setAttribute('aria-label',a?'Fechar menu':'Abrir menu')"><span></span></button>
   <nav id="menu-topo"><a href="../index.html">Início</a><a href="../propostas.html">Propostas</a><a href="../candidatos.html">Candidatos</a><a href="../artigos.html" class="ativo">Artigos</a><a href="../apoie.html">Compartilhe</a><a href="../ideias.html">Envie sua ideia</a><a href="../cadastro.html" class="cta">Quero apoiar</a></nav>
 </div></header>
@@ -50,13 +50,13 @@
   <div class="faq"><details><summary>Isso é acusação contra alguém?</summary><p>Não. É regra para o Conselho, que vale para qualquer gestão, inclusive a da Chapa 2 se eleita. O artigo não cita caso nem pessoa.</p></details><details><summary>O CAU/SP pode apoiar evento de entidade?</summary><p>Pode, por convênio e com recursos próprios (Lei 12.378/2010, art. 34, XIV). A proposta é que o apoio siga critério público, com prazo e lista divulgada.</p></details><details><summary>Quem fiscaliza se a regra está sendo cumprida?</summary><p>O Plenário, as comissões, a auditoria e o relatório anual. E o profissional, que passa a ter a lista de apoios concedidos e negados para conferir.</p></details><details><summary>Isso custa dinheiro?</summary><p>Quase nada. É trabalho de regimento e publicação. O custo de não ter regra é maior: decisões sem critério geram contestação e desconfiança.</p></details></div>
   <h2>Fontes</h2>
   <ul class="fontes"><li>Caderno de propostas da Chapa 2 RESET (2026), proposta 25 e propostas 26, 27, 28 e 75.</li><li>Constituição Federal, art. 37 (princípios da administração pública: legalidade, impessoalidade, moralidade, publicidade e eficiência).</li><li>Lei 12.378/2010, art. 34, incisos I, X, XIII e XIV.</li><li>Regulamento Eleitoral do CAU (Res. CAU/BR 179/2019, redação da Res. 268/2025), art. 22 e art. 28, parágrafo 4º.</li></ul>
-  <div class="assina"><img src="../img/cau-reset-badge.webp" alt="Chapa 2 RESET"><div><b>Chapa 2 RESET</b><small>Reconstrução, Escuta, Suporte, Equidade, Transparência. Eleições CAU/SP 2026. Responsável: Eder Roberto da Silva. Dúvidas: juridicochapareset@gmail.com</small></div></div>
+  <div class="assina"><img src="../img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET"><div><b>Chapa 2 RESET</b><small>Reconstrução, Escuta, Suporte, Equidade, Transparência. Eleições CAU/SP 2026. Responsável: Eder Roberto da Silva. Dúvidas: juridicochapareset@gmail.com</small></div></div>
   <div class="relac"><h3>Mais sobre Transparência</h3><ul><li><a href="p024.html">Cumprir a Lei 12.378/2010</a> (proposta 24)</li><li><a href="p026.html">Política de integridade</a> (proposta 26)</li><li><a href="p027.html">Prestar contas em linguagem clara</a> (proposta 27)</li></ul></div>
   <p><a class="btn roxo" href="../propostas.html#p25">Ver a proposta 25 no caderno</a> &nbsp; <a class="btn amarelo" href="../cadastro.html">Quero apoiar a Chapa 2</a></p>
 </div>
 <aside class="painel-voto" id="painel-art" aria-label="Chamada para votar na Chapa 2">
   <div class="pv-topo">
-    <img class="pv-logo" src="../img/cau-reset-badge.webp" alt="Chapa 2 RESET">
+    <img class="pv-logo" src="../img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET">
     <div class="pv-data">
       <span class="pv-selo">5 de novembro</span>
       <span class="pv-timer" id="pv-timer" aria-live="polite">Faltam <b>…</b> dias</span>
@@ -76,6 +76,6 @@
 <script>
 (function(){var el=document.getElementById('pv-timer');if(!el)return;function atualiza(){var hoje=new Date();hoje.setHours(0,0,0,0);var dia=new Date(2026,10,5);var d=Math.round((dia-hoje)/86400000);if(d>1)el.innerHTML='Faltam <b>'+d+'</b> dias';else if(d===1)el.innerHTML='Falta <b>1</b> dia';else if(d===0)el.innerHTML='<b>É hoje!</b> Vote pelo SiEN';else el.innerHTML='Votação encerrada';}atualiza();setInterval(atualiza,60*60*1000);})();
 </script>
-<script src="../js/revisao.js?v=09513499" defer></script>
+<script src="../js/revisao.js?v=11700167" defer></script>
 </body>
 </html>

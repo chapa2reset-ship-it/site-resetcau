@@ -5,13 +5,13 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="favicon.png" type="image/png">
-<link rel="icon" href="img/cau-reset-badge.webp" type="image/webp">
+<link rel="icon" href="img/cau-reset-badge.webp?v=11700167" type="image/webp">
 <link rel="apple-touch-icon" href="favicon.png">
 <title>Chapa 2 RESET | Eleições CAU/SP 2026</title>
 <meta name="description" content="Chapa 2 RESET: 118 propostas para fazer o CAU/SP voltar a trabalhar para os arquitetos e urbanistas. Vote dia 5 de novembro.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=09513499">
+<link rel="stylesheet" href="estilo.css?v=11700167">
 <style>
 .faixa-eixos{background:var(--amarelo);color:var(--roxo);padding:64px 0 72px;position:relative;overflow:hidden}
 .faixa-eixos::before{content:"4";position:absolute;right:-30px;top:-70px;font-size:460px;font-weight:800;line-height:1;color:rgba(42,22,70,.07);pointer-events:none}
@@ -91,9 +91,9 @@
 </style>
 </head>
 <body>
-<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div><script src="js/faixa.js?v=09513499"></script>
+<div class="faixa-voto">Votação dia 5 de novembro, quinta-feira, 100% online. Vote Chapa 2.</div><script src="js/faixa.js?v=11700167"></script>
 <header class="topo"><div class="wrap">
-  <a class="marca" href="index.html"><img class="logo" src="img/cau-reset-badge.webp" alt="Chapa 2 RESET"><span>RESET<small>Eleições CAU/SP 2026</small></span></a>
+  <a class="marca" href="index.html"><img class="logo" src="img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET"><span>RESET<small>Eleições CAU/SP 2026</small></span></a>
   <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-topo" onclick="var t=this.closest('.topo'),a=t.classList.toggle('aberto');this.setAttribute('aria-expanded',a);this.setAttribute('aria-label',a?'Fechar menu':'Abrir menu')"><span></span></button>
   <nav id="menu-topo">
     <a href="index.html" class="ativo">Início</a>
@@ -119,7 +119,7 @@
       </div>
     </div>
     <div class="lado-logo">
-      <img class="logo-grande" src="img/cau-reset-badge.webp" alt="Chapa 2 RESET">
+      <img class="logo-grande" src="img/cau-reset-badge.webp?v=11700167" alt="Chapa 2 RESET">
       <p class="legenda-logo">Muitas vozes. Uma vontade de mudar.</p>
     </div>
   </div>
@@ -328,7 +328,7 @@ v.addEventListener('ended',function(){c.classList.remove('tocando');v.controls=f
 })();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
-<script src="js/reset-db.js?v=09513499"></script>
+<script src="js/reset-db.js?v=11700167"></script>
 <script>
 (function(){var f=document.getElementById('form-home');if(!f)return;var $=function(i){return document.getElementById(i)};
 f.addEventListener('submit',function(ev){ev.preventDefault();var e=$('herro');var nome=$('hn').value.trim(),em=$('he').value.trim(),cid=$('hc').value.trim();
@@ -340,6 +340,6 @@ ResetDb.enviarApoio({nome:nome,email:em,whatsapp:$('hw').value,cidade:cid,atuaca
 .catch(function(err){e.textContent='Não deu pra enviar agora. Tenta de novo em um minuto.';e.hidden=false;console.error(err);})
 .finally(function(){b.disabled=false;b.textContent='Quero apoiar a Chapa 2';});});})();
 </script>
-<script src="js/revisao.js?v=09513499" defer></script>
+<script src="js/revisao.js?v=11700167" defer></script>
 </body>
 </html>
