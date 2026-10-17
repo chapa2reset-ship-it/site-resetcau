@@ -1,4 +1,4 @@
-/* Chapa 2 R.E.S.E.T. · modo revisão de textos
+/* Chapa 2 RESET · modo revisão de textos
    Liga com ?revisar no endereço (desliga com ?revisar=0). Fora disso, este arquivo não faz nada.
    Quem é da equipe entra com o login do painel, clica num trecho, reescreve e salva.
    As sugestões vão pra tabela "sugestoes" do banco e aparecem no painel (aba Revisão). */

@@ -1,4 +1,4 @@
-/* Apoie a Chapa 2 R.E.S.E.T.
+/* Apoie a Chapa 2 RESET.
    Moldura na foto de perfil, post pronto pra compartilhar e convite pelo WhatsApp.
    Tudo roda no navegador: nenhuma foto sai do aparelho e nao ha chamada de rede
    alem dos arquivos desta propria pasta (apoie.json, img/, molduras/).
@@ -15,11 +15,11 @@
     moldura_provisoria: true,
     selo: 'img/cau-reset-badge.webp',
     site: 'resetcau.com',
-    titulo_share: 'Eu voto Chapa 2 R.E.S.E.T.',
-    legenda: 'Dia 5 de novembro eu voto Chapa 2 R.E.S.E.T. pra resetar o CAU/SP. Mais trabalho, fiscalização de verdade, suporte ao profissional e transparência. Conheça as 118 propostas em resetcau.com #Chapa2 #RESET #CAUSP',
-    whatsapp: 'Dia 5/11 tem eleição do CAU/SP, 100% online. Eu estou com a Chapa 2 R.E.S.E.T. Veja as propostas: https://resetcau.com',
-    post: { linha1: 'Eu voto', linha2: 'Chapa 2', linha3: 'R.E.S.E.T.', linha4: 'no dia 5 de novembro', rodape: 'resetcau.com' },
-    moldura_texto: { linha1: 'VOTE CHAPA 2', linha2: 'R.E.S.E.T.' },
+    titulo_share: 'Eu voto Chapa 2 RESET',
+    legenda: 'Dia 5 de novembro eu voto Chapa 2 RESET pra resetar o CAU/SP. Mais trabalho, fiscalização de verdade, suporte ao profissional e transparência. Conheça as 118 propostas em resetcau.com #Chapa2 #RESET #CAUSP',
+    whatsapp: 'Dia 5/11 tem eleição do CAU/SP, 100% online. Eu estou com a Chapa 2 RESET. Veja as propostas: https://resetcau.com',
+    post: { linha1: 'Eu voto', linha2: 'Chapa 2', linha3: 'RESET', linha4: 'no dia 5 de novembro', rodape: 'resetcau.com' },
+    moldura_texto: { linha1: 'VOTE CHAPA 2', linha2: 'RESET' },
     cores: { roxo: '#2a1646', roxo2: '#1d0f33', amarelo: '#f5c400', laranja: '#ff7a2f', azul: '#3fb5ff', verde: '#3ddc84', rosa: '#ff5c9a' }
   };
   var FONTE = 'Montserrat, Arial, Helvetica, sans-serif';
@@ -109,7 +109,7 @@
 
   /* ---------- moldura provisoria (desenhada no navegador) ----------
      1080x1080, centro transparente, borda fina roxa, faixa inferior roxa com
-     "VOTE CHAPA 2 R.E.S.E.T." em amarelo e o selo no canto inferior direito. */
+     "VOTE CHAPA 2 RESET" em amarelo e o selo no canto inferior direito. */
   function gerarMolduraProvisoria(selo) {
     var C = CFG.cores, c = document.createElement('canvas'); c.width = c.height = LADO;
     var x = c.getContext('2d'), borda = 18, faixaY = 860;

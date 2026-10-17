@@ -326,3 +326,16 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 }
 
 @media (max-width:820px){.topo .menu-btn{margin-left:auto}}
+
+/* painel de voto: titulo numa linha + slogan */
+body .painel-voto h3{font-size:21px;line-height:1.15}
+.painel-voto .pv-slogan{display:block;font-size:1em;font-weight:inherit;color:#fff;margin-top:2px}
+@media (max-width:820px){body .painel-voto h3{font-size:17px}}
+
+/* faixa amarela fixa no topo, com contagem de dias (js/faixa.js) */
+:root{--faixa-h:36px}
+.faixa-voto{position:sticky;top:0;z-index:11;height:var(--faixa-h);box-sizing:border-box;display:flex;align-items:center;justify-content:center;line-height:1.2}
+.faixa-voto .fv-curto{display:none}
+.topo{top:var(--faixa-h)}
+@media (min-width:821px){body .painel-voto{top:calc(90px + var(--faixa-h))}.faixa-eixos .video-eixos{top:calc(96px + var(--faixa-h))}}
+@media (max-width:820px){:root{--faixa-h:30px}.faixa-voto{font-size:12px}.faixa-voto::after{content:none}.faixa-voto .fv-longo{display:none}.faixa-voto .fv-curto{display:inline}}

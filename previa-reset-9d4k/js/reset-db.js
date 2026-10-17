@@ -1,4 +1,4 @@
-/* Chapa 2 R.E.S.E.T. · ligação do site com o banco (Supabase)
+/* Chapa 2 RESET · ligação do site com o banco (Supabase)
    A chave abaixo é a PUBLICÁVEL: pode ficar no site. Quem protege os dados é a regra de linha (RLS) no banco:
    visitante só insere; ler, editar e apagar exige login no painel. */
 (function () {

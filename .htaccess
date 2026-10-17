@@ -1,4 +1,4 @@
-# Chapa 2 R.E.S.E.T. - cabeçalhos de segurança e cache
+# Chapa 2 RESET - cabeçalhos de segurança e cache
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"

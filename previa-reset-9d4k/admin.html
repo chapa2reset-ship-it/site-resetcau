@@ -7,9 +7,9 @@
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="icon" href="img/cau-reset-badge.webp" type="image/webp">
 <link rel="apple-touch-icon" href="favicon.png">
-<title>Painel | Chapa 2 R.E.S.E.T.</title>
+<title>Painel | Chapa 2 RESET</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo.css?v=31860601">
+<link rel="stylesheet" href="estilo.css?v=09513499">
 <style>
 body{background:var(--off)}
 .adm-wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
@@ -65,7 +65,7 @@ button.btn{font:inherit;cursor:pointer}
 
   <div id="painel" hidden>
     <div class="adm-topo">
-      <div><h1>Painel da Chapa 2 R.E.S.E.T.</h1><div class="quem" id="quem"></div></div>
+      <div><h1>Painel da Chapa 2 RESET</h1><div class="quem" id="quem"></div></div>
       <button class="btn sair" id="sair">Sair</button>
     </div>
     <div class="adm-abas">
@@ -86,13 +86,13 @@ button.btn{font:inherit;cursor:pointer}
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.min.js"></script>
-<script src="js/reset-db.js?v=31860601"></script>
+<script src="js/reset-db.js?v=09513499"></script>
 <script>
 (function(){
   var db=ResetDb.cliente(), aba='apoiadores', dados={apoiadores:[],ideias:[],sugestoes:[]}, usuario=null;
   var $=function(id){return document.getElementById(id)};
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  function zap(tel,nome,tipo){var d=String(tel||'').replace(/\D/g,'');if(!d)return '';if(d.length<=11)d='55'+d;var n=(nome||'').trim().split(' ')[0];var msg=tipo==='ideia'?'Olá'+(n?', '+n:'')+'! Aqui é da Chapa 2 R.E.S.E.T. Recebemos a sua ideia no site e queremos entender melhor. Pode falar agora?':'Olá'+(n?', '+n:'')+'! Aqui é da Chapa 2 R.E.S.E.T. Obrigado por entrar na nossa base. Dia 5 de novembro a votação é 100% online. Posso te mandar as propostas por aqui?';return 'https://wa.me/'+d+'?text='+encodeURIComponent(msg);}
+  function zap(tel,nome,tipo){var d=String(tel||'').replace(/\D/g,'');if(!d)return '';if(d.length<=11)d='55'+d;var n=(nome||'').trim().split(' ')[0];var msg=tipo==='ideia'?'Olá'+(n?', '+n:'')+'! Aqui é da Chapa 2 RESET. Recebemos a sua ideia no site e queremos entender melhor. Pode falar agora?':'Olá'+(n?', '+n:'')+'! Aqui é da Chapa 2 RESET. Obrigado por entrar na nossa base. Dia 5 de novembro a votação é 100% online. Posso te mandar as propostas por aqui?';return 'https://wa.me/'+d+'?text='+encodeURIComponent(msg);}
   function btZap(tel,nome,tipo){var u=zap(tel,nome,tipo);return u?'<a class="zap" href="'+u+'" target="_blank" rel="noopener" title="Abrir conversa no WhatsApp">WhatsApp</a>':'<span class="semzap">sem telefone</span>';}
   function dt(s){try{return new Date(s).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'})}catch(e){return s}}
 
